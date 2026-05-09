@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextEl = document.getElementById('nf-next');
 
   // HARDCODED START DATE
-  const START_DATE = new Date('2026-04-19T17:21:00');
+  const START_DATE = new Date('2026-05-02T05:00:00');
   const MILESTONES = [7, 14, 30, 60, 90, 180, 365];
   const RING_CIRCUMFERENCE = 2 * Math.PI * 90; // 565.48
 
