@@ -1,0 +1,409 @@
+================================================================================
+LIFE SYSTEM — COMPLETE DATA SUMMARY
+================================================================================
+Generated: 2026-04-13
+Purpose: Send to AI for fact-checking all claims, data, and program design.
+================================================================================
+
+
+================================================================================
+1. PERSONAL INFORMATION
+================================================================================
+
+- Name: User (wmbolles)
+- Age: 21 years old (born May 30, 2004 — turns 22 on May 30, 2026)
+- Height: 187 cm (6'1.5")
+- Weight: 81 kg (178.6 lbs)
+- BMI: 23.2 (calculated: 81 / (1.87^2) = 23.16, rounded to 23.2)
+- BMI Status: Healthy range (18.5 – 24.9 per WHO)
+- Gym experience: Started ~1.5 months ago (as of April 2026)
+- NoFap start date: 2026-04-12T22:45:42
+
+
+================================================================================
+2. FILE STRUCTURE
+================================================================================
+
+life-system/
+├── index.html          — Main dashboard (3 pillars + elimination + ranking)
+├── dashboard.css       — Dashboard styles
+├── dashboard.js        — Ranking calculator + localStorage persistence
+├── data.txt            — This file
+├── Gym/
+│   ├── index.html      — Beginner program (PPL 5x/week)
+│   ├── advanced.html   — Intermediate program (PPL 6x/week)
+│   ├── specialized.html — Advanced program (12-week block periodization)
+│   ├── style.css       — Shared gym styles (also used by NoFap/Sleep via ../Gym/)
+│   └── script.js       — Gym JS (translations, age calc, scroll reveal)
+├── NoFap/
+│   ├── index.html      — NoFap counter + benefits + brain science
+│   ├── style.css       — NoFap-specific styles
+│   └── script.js       — Hardcoded counter from 2026-04-12T22:45:42
+└── Sleep/
+    ├── index.html      — Sleep system + rules + routine + science
+    ├── style.css       — Sleep-specific styles
+    └── script.js       — Live clock + sleep status
+
+
+================================================================================
+3. GYM SYSTEM — PROGRAM DETAILS
+================================================================================
+
+--- EARLY INTERMEDIATE PROGRAM (Month 2–6) ---
+Split: Push / Pull / Legs (PPL)
+Frequency: 5 sessions per week
+Duration: 90 minutes per session
+Sets per exercise: 3
+Rep scheme: 12 → 10 → 8 (progressive)
+Training to failure: NO (not recommended for beginners)
+
+Transition criteria: Move to intermediate when linear session-to-session
+progression stalls (typically 4-6 months of consistent training).
+
+Push Day exercises:
+1. Barbell Bench Press — 3×12,10,8 (Chest)
+2. Incline Dumbbell Press — 3×12,10,8 (Upper Chest)
+3. Dumbbell Shoulder Press — 3×12,10,8 (Shoulders)
+4. Lateral Raises — 3×15,12,12 (Side Delts)
+5. Tricep Pushdown — 3×12,10,8 (Triceps)
+6. Overhead Tricep Extension — 3×12,10,8 (Triceps Long Head)
+
+Pull Day exercises:
+1. Lat Pulldown — 3×12,10,8 (Lats)
+2. Seated Cable Row — 3×12,10,8 (Mid Back)
+3. Dumbbell Row — 3×10,10,8 (Back)
+4. Face Pull — 3×15,15,12 (Rear Delts)
+5. Dumbbell Bicep Curl — 3×12,10,8 (Biceps)
+6. Hammer Curls — 3×12,10,8 (Brachialis)
+
+Leg Day exercises:
+1. Barbell Back Squat — 3×12,10,8 (Quads/Glutes)
+2. Romanian Deadlift — 3×12,10,8 (Hamstrings)
+3. Leg Curl — 3×12,10,10 (Hamstrings)
+4. Calf Raises — 3×15,15,12 (Calves)
+5. Leg Press — 3×12,10,8 (Quads)
+
+Schedule Rotation A: Push, Pull, Legs, Push, Pull, Rest, Rest
+Schedule Rotation B: Legs, Push, Pull, Legs, Push, Rest, Rest
+
+
+--- INTERMEDIATE PROGRAM (Month 6–18) ---
+Split: PPL × 2
+Frequency: 6 sessions per week
+Duration: 90 minutes per session
+Sets per exercise: 4 on compounds, 3 on isolation
+Rep scheme: 5-5-8-8 on compounds (periodized)
+Training to failure: YES (last sets)
+New addition: Deadlift
+
+Transition criteria: Move to specialized when weekly progression stalls
+and body requires periodized training blocks.
+
+Push Day: Bench 4×5,5,8,8 / Incline DB 4×8,8,10,10 / Cable Flies 3×12 /
+OHP 4×5,5,8,8 / Lateral Raises 4×12,12,15,15 / Weighted Dips 3×8,8,10 /
+OH Tricep Extension 3×10,10,12
+
+Pull Day: Deadlift 4×5,5,5,5 / Barbell Row 4×6,6,8,8 / Lat Pulldown 3×8,10,12 /
+Seated Cable Row 3×10,10,12 / Face Pull 4×12,12,15,15 / Barbell Curl 3×8,8,10 /
+Incline DB Curl 3×10,10,12 / Barbell Shrug 3×10,10,12
+
+Leg Day: Back Squat 4×5,5,8,8 / RDL 4×8,8,10,10 / Leg Press 3×10,10,12 /
+Bulgarian Split Squat 3×10 / Leg Curl 3×10,10,12 / Standing Calf Raises 4×12,12,15,15 /
+Leg Extension 3×12,12,15
+
+
+--- SPECIALIZED PROGRAM (Month 18+) ---
+Structure: 12-week block periodization cycle
+Frequency: 6 sessions per week
+Duration: 90-120 minutes per session
+
+Phase 1 — Strength Block (Weeks 1-4):
+- Heavy compound lifts, 3-5 reps, 4-5 sets
+- Long rest periods (3-5 minutes)
+- RPE 8-9 (1-2 reps in reserve)
+- Minimal isolation work
+
+Phase 2 — Hypertrophy Block (Weeks 5-10):
+- Moderate weight, 8-12 reps, 4 sets
+- 60-90 second rest periods
+- Advanced techniques: Drop Sets, Rest-Pause, Myo-Reps, Supersets
+- Train to failure on last sets
+
+Phase 3 — Deload & Test (Weeks 11-12):
+- Reduce volume by 50%
+- Keep intensity at ~70%
+- RPE 6 (4+ reps in reserve)
+- Test new 1RM on main lifts
+- Then restart the cycle
+
+Advanced Techniques (for hypertrophy block only):
+- Drop Sets (DS): Hit failure → reduce weight 25-30% → failure again
+- Rest-Pause (RP): Hit failure → rack → 10-15s rest → max reps → repeat 1-2x
+- Myo-Reps (MR): Activation set 12-20 reps → 5s rest → 3-5 mini-sets of 3-5 reps
+- Supersets: Two exercises back-to-back, no rest (antagonist pairs)
+
+
+================================================================================
+4. NOFAP SYSTEM
+================================================================================
+
+Start date: 2026-04-12T22:45:42 (hardcoded, no reset)
+Counter: Auto-calculated from start date, updates every 60 seconds
+Ring progress: 90 days = full ring (the "reboot" target)
+
+Milestones:
+- 7 days (1 week): Dopamine receptors start recovering
+- 14 days (2 weeks): Increased energy & confidence
+- 30 days (1 month): Brain fog clears, better focus
+- 60 days (2 months): Habit rewiring solidifies
+- 90 days: Widely-used recovery milestone (community milestone, not hard science).
+  Research confirms improvement in executive function at this point.
+  Full neural recovery is individual and ongoing. (J. Behavioral Addictions, 2020)
+- 365 days (1 year): Complete transformation
+
+Brain Science Timeline (claims to verify):
+- Week 1: Withdrawal phase — dopamine craving, mood swings, restlessness
+- Week 2-3: Flatline — dopamine receptors resensitizing, low energy (temporary)
+- Week 4-8: Recovery — ΔFosB protein levels begin declining, undetectable by ~month 2.
+  However, structural changes (dendritic spine growth in nucleus accumbens)
+  persist for months. (Nestler et al., PNAS 2001)
+- Day 90+: Widely-used recovery milestone. Executive function improves,
+  impulsivity reduces. Full neural recovery is individual. (J. Behavioral Addictions, 2020)
+
+Additional benefits:
+- PFC Recovery: Compulsive pornography use reduces PFC activity.
+  Abstinence allows recovery of decision-making and impulse control. (JAMA Psychiatry, 2014)
+
+Week 1 disclaimer: Neurological effects most pronounced in individuals with
+compulsive use patterns. Effects vary by usage history and brain chemistry.
+
+1. More energy/drive — dopamine sensitivity restoration
+2. Sharper focus — brain fog reduction after 2-4 weeks
+3. Self-discipline — willpower transfer to other areas
+4. Time reclaimed — hours per week freed up
+5. Prefrontal cortex recovery — PFC regains function, improving
+   decision-making and impulse control (JAMA Psychiatry, 2014)
+
+Sources cited:
+- Your Brain on Porn (yourbrainonporn.com/relevant-research-and-articles)
+- NIH: Problematic Pornography Use (pubmed.ncbi.nlm.nih.gov/34798978/)
+
+
+================================================================================
+5. SLEEP SYSTEM
+================================================================================
+
+Schedule: Fixed daily
+- Bedtime: 9:30 PM (21:30)
+- Wake up: 6:30 AM (06:30)
+- Duration: 9 hours
+- Sleep cycles: 5-6 (each ~90 minutes)
+
+6 Non-Negotiable Rules:
+
+1. NO CAFFEINE AFTER 1:30 PM
+   Claim: Caffeine half-life is 3–7 hours (avg ~5 hours).
+   Varies by genetics, liver enzymes, medications, and smoking status.
+   Rule: 8 hours before bed = 1:30 PM cutoff
+   Includes: Coffee, tea, energy drinks, chocolate
+   Source: pubmed.ncbi.nlm.nih.gov/24235903/
+
+2. NO PHONE 90 MINUTES BEFORE & AFTER SLEEP
+   Before (after 8:00 PM): Blue light can suppress melatonin by 30–60%
+   depending on intensity, duration, and individual sensitivity
+   After (until 8:00 AM): Checking phone triggers cortisol spike
+   Source: pubmed.ncbi.nlm.nih.gov/25535358/
+
+3. SAME TIME EVERY DAY
+   Claim: "Social jetlag" from irregular weekend sleep linked to obesity,
+   depression, cardiovascular risk
+   Source: pubmed.ncbi.nlm.nih.gov/28364486/
+
+4. COMPLETE DARKNESS
+   Claim: Even dim light during sleep reduces melatonin and disrupts deep sleep
+   Source: pubmed.ncbi.nlm.nih.gov/35316830/
+
+5. COOL ROOM: 18-20°C
+   Claim: Core body temperature needs to drop 1-2°C to initiate deep sleep
+   Optimal room temp: 18°C (65°F)
+   Source: pubmed.ncbi.nlm.nih.gov/22738673/
+
+6. NO HEAVY MEALS AFTER 7:30 PM
+   Claim: Eating 2+ hours before bed allows digestion
+   Large meals increase gastric acid, body temp, disrupt sleep cycles
+   Source: pubmed.ncbi.nlm.nih.gov/26156950/
+
+Evening Routine:
+- 7:30 PM — Last meal
+- 8:00 PM — Phone on airplane mode, charge outside bedroom
+- 8:00-8:30 — Shower (warm → core temp drops after → helps sleep)
+- 8:30-9:15 — Read physical book or journal, dim lights
+- 9:15 PM — Close curtains, set room to 18°C
+- 9:30 PM — Lights off (4-7-8 breathing if not sleepy)
+- 6:30 AM — Wake up immediately, no snooze
+- 6:30-8:00 AM — Phone-free morning, hydrate, stretch, sunlight
+
+Science Claims (to verify):
+1. "Sleeping only 6hrs/night for 14 consecutive days produces cognitive deficits
+   equivalent to 1 full night without sleep — subjects don't feel as impaired
+   as they are" (Van Dongen et al., Sleep 2003)
+   Source: pubmed.ncbi.nlm.nih.gov/12683469/
+
+2. "70% of daily growth hormone released during deep sleep"
+   "Men sleeping 5hrs have testosterone 10-15% lower than 8hrs"
+   Source: Leproult & Van Cauter, JAMA 2011 (pubmed.ncbi.nlm.nih.gov/21632481/)
+
+3. "Sleep deprivation increases ghrelin (hunger) by 28%"
+   Source: Spiegel et al., Annals 2004 (pubmed.ncbi.nlm.nih.gov/15583226/)
+
+4. "People sleeping <6hrs have 48% higher risk of heart disease death"
+   Source: Cappuccio et al., Eur Heart J 2011 (pubmed.ncbi.nlm.nih.gov/20920190/)
+
+5. "Sleep deprivation makes amygdala up to 60% more reactive to negative stimuli"
+   Severs PFC-amygdala regulatory connection
+   Source: Krause et al., Nature Human Behaviour 2017 (pubmed.ncbi.nlm.nih.gov/29073412/)
+
+
+================================================================================
+6. DASHBOARD — GLOBAL RANKING SYSTEM
+================================================================================
+
+World population used: 8 billion (8,000,000,000)
+
+8 habits tracked with research-based rankings:
+
+HABIT                      | TOP %  | ~PEOPLE    | DATA SOURCE
+---------------------------|--------|------------|---------------------------
+Train 5x/week              | Top 5% | ~400M      | WHO/ACSM — ~20% have gym
+                           |        |            | access, ~25% of members
+                           |        |            | go 4+x/week
+NoFap (No PMO)             | Top 22%| ~880M      | Barna Group 2024 — 78% of
+                           |        |            | men 13-65 consume porn
+Sleep 9hrs (consistent)    | Top 15%| ~1.2B      | Global Sleep Study — only
+                           |        |            | 15% get 7-9hrs 5+ nights/wk
+No energy drinks           | Top 91%| ~7.3B      | NIH meta-analysis — 8.82%
+                           |        |            | consume daily
+Clean eating (no junk)     | Top 18%| ~1.44B     | WHO/Lancet — 82% eat
+                           |        |            | ultra-processed regularly
+No music addiction         | Top 7% | ~560M      | IFPI Global Report — 93%
+                           |        |            | listen regularly (20.7hrs/wk)
+Minimal screen time        | Top 12%| ~960M      | DataReportal 2024 — avg
+                           |        |            | 2h23m/day social media
+Early sleep schedule       | Top 10%| ~800M      | Sleep Foundation — ~10%
+                           |        |            | maintain consistent early bed
+
+Combined ranking calculation: Multiply all individual top-% fractions.
+Example: All 8 active = 0.05 × 0.22 × 0.15 × 0.91 × 0.18 × 0.07 × 0.12 × 0.10
+= ~0.0000000194 = Top 0.000002% (~155 people on Earth)
+
+IMPORTANT: This assumes all habits are statistically independent. In reality,
+disciplined people cluster behaviors together, so the true number is likely
+in the thousands — still extraordinarily rare.
+
+NOTE: This multiplication assumes independence (doing one habit doesn't affect
+the probability of doing another). In reality, habits correlate — disciplined
+people tend to do multiple good things. So the actual number is likely higher
+(less rare). The multiplication gives a lower bound estimate.
+
+
+================================================================================
+7. BAD HABITS TO ELIMINATE (8 ITEMS)
+================================================================================
+
+1. PMO / Pornography
+   Claim: 78% of men 13-65 consume it (Barna 2024)
+
+2. Energy Drinks
+   Claim: ~9% consume daily (NIH meta-analysis)
+   Risks: Sugar, caffeine, chemicals, cortisol spike, heart damage
+
+3. Junk Food / Ultra-Processed Food
+   Claim: Linked to 30+ diseases (WHO)
+   Risks: Obesity, depression, heart disease
+
+4. Excessive Music
+   Claim: 90%+ listen daily, avg 20.7 hrs/week (IFPI)
+   Reason: Constant dopamine stimulation, prevents reflection
+
+5. Mindless Scrolling / Social Media
+   Claim: Average 2h 23m/day (DataReportal 2024) = 36 days/year
+
+6. Staying Up Late
+   Claim: Only 15% get recommended sleep 5+ nights/week
+   Night owls 10% higher mortality risk (NIH)
+
+7. Complaining & Negativity
+   Claim: Chronic stress and sustained elevated cortisol associated with reduced
+   hippocampal volume, impairing memory consolidation and emotional regulation.
+   (McEwen, Annual Review of Neuroscience, 1999 — Rockefeller University)
+
+8. Laziness & Procrastination
+   Claim: Research estimates ~20% of adults are chronic procrastinators (Pychyl & Flett, 2012)
+   Tool: 2-minute rule
+
+
+================================================================================
+8. DESIGN & TECHNICAL NOTES
+================================================================================
+
+Colors:
+- #091413 (bg darkest)
+- #285A48 (green deep)
+- #408A71 (green mid)
+- #B0E4CC (green light)
+- Push accent: #e0965a (warm orange)
+- Pull accent: #5a9ee0 (blue)
+- Legs accent: #c75ae0 (purple)
+- Rest accent: #4a5a55 (muted)
+
+Fonts: Inter (body), JetBrains Mono (numbers/code)
+Design: Dark theme, glassmorphism cards, scroll reveal animations
+Responsive: Mobile-first, hamburger menu on mobile
+Language: English/Arabic toggle (Gym pages only via data-i18n system)
+
+LocalStorage keys used:
+- nofap_start (legacy, no longer used — date is hardcoded)
+- ls_ranks (dashboard ranking toggles)
+- ls_elims (dashboard elimination checkboxes)
+
+
+================================================================================
+9. THINGS TO FACT-CHECK / VERIFY
+================================================================================
+
+Priority items for AI review:
+
+[ ] Gym: Is 4-6 months the correct timeline for beginner → intermediate?
+[ ] Gym: Are 3 sets sufficient for beginners, or should it be more?
+[ ] Gym: Is the PPL split optimal for a 21yo at 187cm/81kg?
+[ ] Gym: Are the exercise selections correct for each day?
+[ ] Gym: Is the rep scheme 12→10→8 evidence-based for beginners?
+[ ] Gym: Should beginners avoid training to failure? (claimed yes)
+[ ] Gym: Is 90 minutes too long for a beginner session?
+[ ] Gym: Are MuscleWiki links accurate for each exercise?
+
+[ ] NoFap: Is the ΔFosB protein claim accurate for PMO behavior?
+[ ] NoFap: Is "90 days = full reboot" supported by neuroscience?
+[ ] NoFap: Is the dopamine receptor timeline accurate?
+[ ] NoFap: Is the 78% Barna Group stat correctly cited?
+
+[ ] Sleep: Is caffeine half-life really 3–7 hours (avg ~5)?
+[ ] Sleep: Does blue light suppress melatonin by "30–60%"?
+[ ] Sleep: Is 9 hours of sleep appropriate for a 21-year-old?
+[ ] Sleep: Is the "6hrs for 14 days = 1 full night deprivation" study accurate?
+[ ] Sleep: Is the "testosterone 10-15% lower with 5hrs sleep" accurate?
+[ ] Sleep: Is the ghrelin increase of 28% correctly cited?
+[ ] Sleep: Is the 48% heart disease risk increase accurately cited?
+[ ] Sleep: Are all PubMed links valid and correctly attributed?
+
+[ ] Dashboard: Is the 5% gym frequency stat reasonable?
+[ ] Dashboard: Is the 22% NoFap stat derived correctly from the 78% claim?
+[ ] Dashboard: Is the independence multiplication for combined rank valid?
+[ ] Dashboard: Is the "93% listen to music" stat from IFPI correct?
+[x] Dashboard: Is the "20% chronic procrastinators" correctly sourced? → Updated to Pychyl & Flett, 2012
+[x] Dashboard: Is the Stanford complaining/hippocampus claim real? → Replaced with McEwen, 2007
+[ ] Dashboard: Is BMI 23.2 correctly calculated for 187cm / 81kg?
+
+================================================================================
+END OF DATA SUMMARY
+================================================================================

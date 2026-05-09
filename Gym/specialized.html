@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specialized Training — Gym System</title>
+  <meta name="description" content="Advanced periodized training program for 18+ months — block periodization with strength, hypertrophy, and peaking phases." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header id="hero" class="hero hero--has-bg" style="background-image: url('hero.png')">
+    <div class="hero__bg-pattern"></div>
+    <nav class="hero__nav">
+      <a href="index.html" class="nav__brand"><span class="nav__icon">⚡</span><span>LIFE SYSTEM</span></a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link" data-i18n="navBeginner">← Beginner</a>
+        <a href="advanced.html" class="nav__link" data-i18n="navAdvanced">← Advanced</a>
+        <a href="#blocks" class="nav__link" data-i18n="navBlocks">Blocks</a>
+        <a href="#strength" class="nav__link" data-i18n="navStrength">Strength</a>
+        <a href="#hypertrophy" class="nav__link" data-i18n="navHypertrophy">Hypertrophy</a>
+        <a href="#techniques" class="nav__link" data-i18n="navTechniques">Techniques</a>
+      </div>
+      <div class="nav__actions">
+        <button id="lang-toggle" class="lang-btn" aria-label="Toggle language"><span class="lang-btn__en">عربي</span></button>
+        <button id="mobile-menu-btn" class="nav__mobile-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="hero__content hero__content--compact">
+      <div class="hero__badge" data-i18n="specBadge">SPECIALIZED TRAINING — 18+ MONTHS</div>
+      <h1 class="hero__title"><span class="hero__title-line" data-i18n="specTitle1">SPECIALIZED</span><span class="hero__title-line hero__title-line--accent" data-i18n="specTitle2">TRAINING</span></h1>
+      <p class="hero__subtitle" data-i18n="specSubtitle">Block Periodization — 6 Days/Week — Strength & Hypertrophy Cycles</p>
+      <div class="hero__stats">
+        <div class="stat-card"><span class="stat-card__number">6</span><span class="stat-card__label" data-i18n="sessionsWeek">Sessions / Week</span></div>
+        <div class="stat-card"><span class="stat-card__number">90–120</span><span class="stat-card__label" data-i18n="minSession">Minutes / Session</span></div>
+        <div class="stat-card"><span class="stat-card__number">12</span><span class="stat-card__label" data-i18n="specWeekCycle">Week Cycle</span></div>
+        <div class="stat-card"><span class="stat-card__number">3</span><span class="stat-card__label" data-i18n="specPhases">Training Phases</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOCK PERIODIZATION OVERVIEW -->
+  <section id="blocks" class="section schedule-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="specOverviewTag">PERIODIZATION OVERVIEW</span>
+        <h2 class="section__title" data-i18n="specOverviewTitle">12-Week Training Cycle</h2>
+        <p class="section__desc" data-i18n="specOverviewDesc">At 18+ months, linear gains slow down. Your body needs structured variation — cycling between strength, hypertrophy, and recovery phases to keep progressing.</p>
+      </div>
+
+      <div class="blocks-grid">
+        <div class="block-card block-card--strength">
+          <div class="block-card__phase" data-i18n="specPhase">PHASE</div>
+          <div class="block-card__number">1</div>
+          <h3 class="block-card__title" data-i18n="specBlock1Title">Strength Block</h3>
+          <span class="block-card__duration" data-i18n="specBlock1Dur">Weeks 1 – 4</span>
+          <ul class="block-card__list">
+            <li data-i18n="specB1L1">Heavy compound lifts (3-5 reps)</li>
+            <li data-i18n="specB1L2">4-5 sets per exercise</li>
+            <li data-i18n="specB1L3">Long rest periods (3-5 min)</li>
+            <li data-i18n="specB1L4">RPE 8-9 (1-2 reps in reserve)</li>
+            <li data-i18n="specB1L5">Minimal isolation work</li>
+          </ul>
+        </div>
+        <div class="block-card block-card--hypertrophy">
+          <div class="block-card__phase" data-i18n="specPhase">PHASE</div>
+          <div class="block-card__number">2</div>
+          <h3 class="block-card__title" data-i18n="specBlock2Title">Hypertrophy Block</h3>
+          <span class="block-card__duration" data-i18n="specBlock2Dur">Weeks 5 – 10</span>
+          <ul class="block-card__list">
+            <li data-i18n="specB2L1">Moderate weight (8-12 reps)</li>
+            <li data-i18n="specB2L2">4 sets per exercise, higher volume</li>
+            <li data-i18n="specB2L3">60-90 second rest periods</li>
+            <li data-i18n="specB2L4">Advanced techniques (drop sets, rest-pause)</li>
+            <li data-i18n="specB2L5">Train to failure on last sets</li>
+          </ul>
+        </div>
+        <div class="block-card block-card--deload">
+          <div class="block-card__phase" data-i18n="specPhase">PHASE</div>
+          <div class="block-card__number">3</div>
+          <h3 class="block-card__title" data-i18n="specBlock3Title">Deload & Test</h3>
+          <span class="block-card__duration" data-i18n="specBlock3Dur">Weeks 11 – 12</span>
+          <ul class="block-card__list">
+            <li data-i18n="specB3L1">Reduce volume by 50%</li>
+            <li data-i18n="specB3L2">Keep intensity moderate (RPE 6-7)</li>
+            <li data-i18n="specB3L3">Test new 1RM on main lifts</li>
+            <li data-i18n="specB3L4">Focus on recovery and mobility</li>
+            <li data-i18n="specB3L5">Then restart the cycle</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRENGTH BLOCK WORKOUTS -->
+  <section id="strength" class="section workout-section">
+    <div class="container">
+      <div class="workout-header">
+        <div class="workout-header__icon push-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div>
+          <span class="section__tag" data-i18n="specStrPushTag">STRENGTH BLOCK — PUSH</span>
+          <h2 class="section__title" data-i18n="specStrPushTitle">Push Day (Strength)</h2>
+          <p class="workout-header__targets" data-i18n="specStrPushDesc">Focus: Heavy compounds for max strength. RPE 8-9.</p>
+        </div>
+      </div>
+      <div class="table-wrapper"><table class="exercise-table"><thead><tr><th class="th-num">#</th><th class="th-exercise" data-i18n="thExercise">Exercise</th><th class="th-sets" data-i18n="thSets">Sets</th><th class="th-reps" data-i18n="thReps">Reps</th><th class="th-link" data-i18n="thTechnique">Technique</th><th class="th-notes" data-i18n="thNotes">Notes</th></tr></thead><tbody>
+        <tr><td class="td-num">1</td><td class="td-exercise"><span class="exercise-name">Barbell Bench Press</span><span class="exercise-muscle">Chest</span></td><td class="td-sets">5</td><td class="td-reps"><span class="reps-scheme">5 · 5 · 3 · 3 · 3</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-bench-press" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Work up to heavy triples. 3-4 min rest.</span></td></tr>
+        <tr><td class="td-num">2</td><td class="td-exercise"><span class="exercise-name">Overhead Press (Barbell)</span><span class="exercise-muscle">Shoulders</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">5 · 5 · 5 · 3</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-overhead-press" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Standing. Brace your core hard.</span></td></tr>
+        <tr><td class="td-num">3</td><td class="td-exercise"><span class="exercise-name">Close Grip Bench Press</span><span class="exercise-muscle">Triceps · Chest</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">6 · 6 · 6</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-close-grip-bench-press" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Builds bench press lockout strength.</span></td></tr>
+        <tr><td class="td-num">4</td><td class="td-exercise"><span class="exercise-name">Weighted Dips</span><span class="exercise-muscle">Triceps · Chest</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">6 · 6 · 8</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/weighted-tricep-dips" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Add serious weight. Great for pressing power.</span></td></tr>
+        <tr><td class="td-num">5</td><td class="td-exercise"><span class="exercise-name">Lateral Raises</span><span class="exercise-muscle">Side Delts</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">12 · 12 · 15</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-lateral-raise" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">High reps even in strength block. Delts need volume.</span></td></tr>
+      </tbody></table></div>
+
+      <!-- STRENGTH PULL -->
+      <div class="workout-header" style="margin-top:64px;">
+        <div class="workout-header__icon pull-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div>
+          <span class="section__tag" data-i18n="specStrPullTag">STRENGTH BLOCK — PULL</span>
+          <h2 class="section__title" data-i18n="specStrPullTitle">Pull Day (Strength)</h2>
+        </div>
+      </div>
+      <div class="table-wrapper"><table class="exercise-table"><thead><tr><th class="th-num">#</th><th class="th-exercise">Exercise</th><th class="th-sets">Sets</th><th class="th-reps">Reps</th><th class="th-link">Technique</th><th class="th-notes">Notes</th></tr></thead><tbody>
+        <tr><td class="td-num">1</td><td class="td-exercise"><span class="exercise-name">Conventional Deadlift</span><span class="exercise-muscle">Full Posterior Chain</span></td><td class="td-sets">5</td><td class="td-reps"><span class="reps-scheme">5 · 3 · 3 · 1 · 1</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-deadlift" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text highlight-note">Work up to heavy singles. Full rest between sets.</span></td></tr>
+        <tr><td class="td-num">2</td><td class="td-exercise"><span class="exercise-name">Weighted Pull-ups</span><span class="exercise-muscle">Lats · Biceps</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">5 · 5 · 5 · 5</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/bodyweight-pull-up" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Add weight with a belt. No kipping.</span></td></tr>
+        <tr><td class="td-num">3</td><td class="td-exercise"><span class="exercise-name">Pendlay Row</span><span class="exercise-muscle">Back (Mid)</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">5 · 5 · 5 · 5</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-bent-over-row" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">From the floor each rep. Explosive pull.</span></td></tr>
+        <tr><td class="td-num">4</td><td class="td-exercise"><span class="exercise-name">Barbell Curl</span><span class="exercise-muscle">Biceps</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">6 · 6 · 8</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-curl" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Heavy cheat curls are acceptable here.</span></td></tr>
+        <tr><td class="td-num">5</td><td class="td-exercise"><span class="exercise-name">Face Pull</span><span class="exercise-muscle">Rear Delts</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">15 · 15 · 15</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/machine-face-pulls" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Always included. Shoulder health is non-negotiable.</span></td></tr>
+      </tbody></table></div>
+
+      <!-- STRENGTH LEGS -->
+      <div class="workout-header" style="margin-top:64px;">
+        <div class="workout-header__icon legs-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div>
+          <span class="section__tag" data-i18n="specStrLegsTag">STRENGTH BLOCK — LEGS</span>
+          <h2 class="section__title" data-i18n="specStrLegsTitle">Leg Day (Strength)</h2>
+        </div>
+      </div>
+      <div class="table-wrapper"><table class="exercise-table"><thead><tr><th class="th-num">#</th><th class="th-exercise">Exercise</th><th class="th-sets">Sets</th><th class="th-reps">Reps</th><th class="th-link">Technique</th><th class="th-notes">Notes</th></tr></thead><tbody>
+        <tr><td class="td-num">1</td><td class="td-exercise"><span class="exercise-name">Barbell Back Squat</span><span class="exercise-muscle">Quads · Glutes</span></td><td class="td-sets">5</td><td class="td-reps"><span class="reps-scheme">5 · 5 · 3 · 3 · 3</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-squat" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text highlight-note">ATG (ass to grass). Belt up for heavy sets.</span></td></tr>
+        <tr><td class="td-num">2</td><td class="td-exercise"><span class="exercise-name">Front Squat</span><span class="exercise-muscle">Quads</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">5 · 5 · 5</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-front-squat" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Clean grip or cross grip. Builds quad strength.</span></td></tr>
+        <tr><td class="td-num">3</td><td class="td-exercise"><span class="exercise-name">Romanian Deadlift</span><span class="exercise-muscle">Hamstrings</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">6 · 6 · 6 · 6</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-romanian-deadlift" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Heavy. Straps allowed. Feel the stretch.</span></td></tr>
+        <tr><td class="td-num">4</td><td class="td-exercise"><span class="exercise-name">Standing Calf Raises</span><span class="exercise-muscle">Calves</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">10 · 10 · 10 · 10</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-calf-raises" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Pause at full stretch. Heavy.</span></td></tr>
+      </tbody></table></div>
+    </div>
+  </section>
+
+  <!-- HYPERTROPHY BLOCK WORKOUTS -->
+  <section id="hypertrophy" class="section workout-section workout-section--alt">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="specHypTag">HYPERTROPHY BLOCK — WEEKS 5-10</span>
+        <h2 class="section__title" data-i18n="specHypTitle">Hypertrophy Phase</h2>
+        <p class="section__desc" data-i18n="specHypDesc">Higher volume, moderate weights, advanced techniques. This is where muscle size is built. Use drop sets and rest-pause on the last set of each exercise.</p>
+      </div>
+
+      <!-- HYP PUSH -->
+      <div class="workout-header">
+        <div class="workout-header__icon push-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div><span class="section__tag" data-i18n="specHypPush">HYPERTROPHY — PUSH</span><h2 class="section__title" data-i18n="pushTitle">Push Day</h2></div>
+      </div>
+      <div class="table-wrapper"><table class="exercise-table"><thead><tr><th class="th-num">#</th><th class="th-exercise">Exercise</th><th class="th-sets">Sets</th><th class="th-reps">Reps</th><th class="th-link">Technique</th><th class="th-notes">Notes</th></tr></thead><tbody>
+        <tr><td class="td-num">1</td><td class="td-exercise"><span class="exercise-name">Incline Dumbbell Press</span><span class="exercise-muscle">Upper Chest</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">8 · 8 · 10 · 12<sup>DS</sup></span></td><td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-incline-bench-press" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">DS = Drop set on last set. Drop weight 30%, go to failure.</span></td></tr>
+        <tr><td class="td-num">2</td><td class="td-exercise"><span class="exercise-name">Flat Barbell Bench</span><span class="exercise-muscle">Chest</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">8 · 8 · 10 · 10</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/barbell-bench-press" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Controlled tempo: 3 seconds down, 1 second up.</span></td></tr>
+        <tr><td class="td-num">3</td><td class="td-exercise"><span class="exercise-name">Cable Flies (3 angles)</span><span class="exercise-muscle">Chest</span></td><td class="td-sets">3</td><td class="td-reps"><span class="reps-scheme">12 · 12 · 15<sup>RP</sup></span></td><td class="td-link"><a href="https://musclewiki.com/exercise/cable-pec-fly" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">RP = Rest-pause last set. Do 15, rest 10s, max reps, rest 10s, max reps.</span></td></tr>
+        <tr><td class="td-num">4</td><td class="td-exercise"><span class="exercise-name">Seated Dumbbell OHP</span><span class="exercise-muscle">Shoulders</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">8 · 10 · 10 · 12</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-seated-overhead-press" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Full range of motion. Dumbbells for better stretch.</span></td></tr>
+        <tr><td class="td-num">5</td><td class="td-exercise"><span class="exercise-name">Cable Lateral Raises</span><span class="exercise-muscle">Side Delts</span></td><td class="td-sets">4</td><td class="td-reps"><span class="reps-scheme">12 · 15 · 15 · 20<sup>MR</sup></span></td><td class="td-link"><a href="https://musclewiki.com/exercise/cable-lateral-raise" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">MR = Myo-reps. Do 20, rest 5s, do 5, rest 5s, do 5, until 3 mini-sets.</span></td></tr>
+        <tr><td class="td-num">6</td><td class="td-exercise"><span class="exercise-name">Tricep Pushdown + OH Ext</span><span class="exercise-muscle">Triceps</span></td><td class="td-sets">3+3</td><td class="td-reps"><span class="reps-scheme">SUPERSET</span></td><td class="td-link"><a href="https://musclewiki.com/exercise/cable-rope-pushdown" target="_blank" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td><td class="td-notes"><span class="note-text">Superset: 12 pushdowns → immediately 12 overhead extensions. No rest between.</span></td></tr>
+      </tbody></table></div>
+
+      <div class="workout-note" style="margin-top:24px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <p data-i18n="specHypNote"><strong>Pull and Leg hypertrophy days</strong> follow the same structure — higher reps (8-15), 4 sets, advanced techniques on last sets. Apply the same principles from the strength block exercises but with lighter weight and more volume. The goal shifts from moving max weight to maximizing time under tension and metabolic stress.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANCED TECHNIQUES -->
+  <section id="techniques" class="section tips-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="specTechTag">ADVANCED TECHNIQUES</span>
+        <h2 class="section__title" data-i18n="specTechTitle">Intensity Techniques</h2>
+        <p class="section__desc" data-i18n="specTechDesc">These techniques are for the hypertrophy block only. They push your muscles past normal failure for maximum growth stimulus.</p>
+      </div>
+      <div class="tips-grid tips-grid--2col">
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <h3 class="tip-card__title" data-i18n="techDSTitle">Drop Sets (DS)</h3>
+          <p class="tip-card__text" data-i18n="techDSText">Hit failure, immediately reduce weight by 25-30%, and continue to failure again. Can do 1-2 drops. Best for isolation exercises and last set of compounds. Example: Bench 80kg × 8 → fail → 60kg × max → fail → 40kg × max.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3 class="tip-card__title" data-i18n="techRPTitle">Rest-Pause (RP)</h3>
+          <p class="tip-card__text" data-i18n="techRPText">Hit failure, rack the weight, rest 10-15 seconds, then do as many reps as possible (usually 2-4 more). Repeat 1-2 times. This extends the set beyond normal failure. Example: Lat Pulldown 12 reps → rest 10s → 3 reps → rest 10s → 2 reps.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg></div>
+          <h3 class="tip-card__title" data-i18n="techMRTitle">Myo-Reps (MR)</h3>
+          <p class="tip-card__text" data-i18n="techMRText">Do an activation set of 12-20 reps close to failure. Rest 5 seconds, do 3-5 mini-sets of 3-5 reps with the same weight, resting 5 sec between. Accumulates high effective reps fast. Great for lateral raises, curls, and leg extensions.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+          <h3 class="tip-card__title" data-i18n="techSSTitle">Supersets</h3>
+          <p class="tip-card__text" data-i18n="techSSText">Perform two exercises back-to-back with no rest. Best for antagonist pairs (biceps/triceps, chest/back) or for pairing a compound with an isolation. Saves time and increases metabolic stress. Example: Barbell Curl → Tricep Pushdown, no rest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DELOAD PROTOCOL -->
+  <section class="section rep-section">
+    <div class="container">
+      <div class="rep-explainer">
+        <div class="rep-explainer__header">
+          <h3 data-i18n="specDeloadTitle">Deload Protocol (Week 11-12)</h3>
+          <p data-i18n="specDeloadDesc">Recovery is where growth happens. Every 10-12 weeks, take a deload.</p>
+        </div>
+        <div class="rep-visual">
+          <div class="rep-set">
+            <span class="rep-set__number" data-i18n="specDL1">VOLUME</span>
+            <span class="rep-set__reps">50%</span>
+            <span class="rep-set__label" data-i18n="specDL1Desc">Reduce total sets by half</span>
+            <div class="rep-set__bar" style="width: 50%"></div>
+          </div>
+          <div class="rep-set">
+            <span class="rep-set__number" data-i18n="specDL2">INTENSITY</span>
+            <span class="rep-set__reps">70%</span>
+            <span class="rep-set__label" data-i18n="specDL2Desc">Keep weight at ~70% of normal</span>
+            <div class="rep-set__bar" style="width: 70%"></div>
+          </div>
+          <div class="rep-set">
+            <span class="rep-set__number" data-i18n="specDL3">EFFORT</span>
+            <span class="rep-set__reps">RPE 6</span>
+            <span class="rep-set__label" data-i18n="specDL3Desc">Leave 4+ reps in the tank</span>
+            <div class="rep-set__bar" style="width: 60%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__text" data-i18n="footerText">Built as part of the <strong>Life System</strong></p>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link" data-i18n="footBeginner">← Beginner Program</a>
+          <a href="advanced.html" class="footer__link" data-i18n="footAdvanced">Advanced Program</a>
+          <a href="../" class="footer__link" data-i18n="footHome">Life System Home</a>
+        </div>
+        <p class="footer__copy" data-i18n="footerCopy">Consistency beats perfection. Show up every day.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

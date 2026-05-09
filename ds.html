@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Daily Schedule — Wassim's Optimal Day</title>
+<meta name="description" content="Optimized daily schedule for a 42 Network student — deep coding, gym, sleep, no compromises."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#000000;--bg-card:rgba(22,24,28,0.55);--bg-card-hover:rgba(30,33,38,0.7);
+  --border:rgba(47,51,54,0.4);--border-hover:rgba(47,51,54,0.7);
+  --green-deep:#1a3a50;--green-mid:#1d9bf0;--green-light:#1d9bf0;
+  --orange:#f9197f;--blue:#1d9bf0;--purple:#7856ff;
+  --muted:#536471;--warn:#f4212e;
+  --text:#e7e9ea;--text2:rgba(231,233,234,0.7);--text3:rgba(231,233,234,0.4);
+  --font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
+  --radius:16px;--radius-sm:10px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;
+  min-height:100vh;-webkit-font-smoothing:antialiased}
+::selection{background:var(--green-mid);color:var(--bg)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--green-deep);border-radius:100px}
+
+/* ---- Progress Bar ---- */
+.progress-bar{position:fixed;top:0;left:0;width:100%;height:4px;z-index:1000;background:rgba(255,255,255,0.04)}
+.progress-bar__fill{height:100%;border-radius:0 4px 4px 0;
+  background:linear-gradient(90deg,var(--green-deep),var(--green-mid),#ffffff);
+  transition:width 1s ease;width:0%}
+
+/* ---- Header ---- */
+.header{text-align:center;padding:80px 24px 40px;position:relative}
+.header::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(29,155,240,0.08) 0%,transparent 70%);pointer-events:none}
+.header__badge{display:inline-block;font-family:var(--mono);font-size:.65rem;font-weight:600;
+  letter-spacing:2px;color:var(--green-mid);text-transform:uppercase;
+  padding:6px 16px;border:1px solid var(--border);border-radius:100px;margin-bottom:16px}
+.header__title{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-1px;
+  line-height:1.1;margin-bottom:8px}
+.header__title span{color:var(--green-light)}
+.header__date{font-family:var(--mono);font-size:.78rem;color:var(--text3);margin-bottom:6px}
+.header__quote{font-size:.88rem;color:var(--text2);font-style:italic}
+.header__quote strong{color:var(--green-light);font-style:normal}
+
+/* ---- Legend ---- */
+.legend{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;padding:0 24px 40px}
+.legend__item{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:500;color:var(--text3)}
+.legend__dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.legend__dot--focus{background:var(--blue)}
+.legend__dot--gym{background:var(--purple)}
+.legend__dot--body{background:var(--green-mid)}
+.legend__dot--energy{background:var(--orange)}
+.legend__dot--wind{background:var(--muted)}
+
+/* ---- Timeline ---- */
+.timeline{max-width:700px;margin:0 auto;padding:0 24px 80px;position:relative}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--green-mid),var(--blue),var(--blue),var(--orange),var(--blue),var(--purple),var(--green-mid),var(--muted),var(--green-deep));
+  transform:translateX(-50%);opacity:.3}
+
+/* ---- Block Card ---- */
+.block{position:relative;padding-bottom:24px;opacity:0;transform:translateY(30px);
+  transition:opacity .6s ease,transform .6s ease}
+.block.visible{opacity:1;transform:translateY(0)}
+.block__card{position:relative;background:var(--bg-card);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px 28px;display:flex;gap:16px;align-items:flex-start;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;cursor:default}
+.block__card:hover{transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.3);border-color:var(--border-hover)}
+.block__accent{position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:4px}
+.block__accent--body{background:var(--green-mid)}
+.block__accent--focus{background:var(--blue)}
+.block__accent--gym{background:var(--purple)}
+.block__accent--energy{background:var(--orange)}
+.block__accent--wind{background:var(--muted)}
+.block__accent--warn{background:var(--warn)}
+.block__accent--sleep{background:linear-gradient(to bottom,var(--green-deep),#0d1117)}
+.block__icon{font-size:1.6rem;flex-shrink:0;margin-top:2px;width:36px;text-align:center}
+.block__body{flex:1;min-width:0}
+.block__time{font-family:var(--mono);font-size:.72rem;font-weight:600;color:var(--text3);
+  letter-spacing:.5px;margin-bottom:4px}
+.block__title{font-size:1rem;font-weight:700;margin-bottom:4px}
+.block__desc{font-size:.82rem;color:var(--text2);line-height:1.6}
+
+/* ---- Science Badge ---- */
+.block__science{margin-top:12px;padding:10px 14px;
+  background:rgba(29,155,240,0.04);border:1px solid rgba(29,155,240,0.08);
+  border-radius:var(--radius-sm);font-size:.72rem;color:var(--green-light);
+  line-height:1.5;display:flex;align-items:flex-start;gap:8px;
+  opacity:0;max-height:0;overflow:hidden;transition:opacity .3s ease,max-height .4s ease,margin .3s ease,padding .3s ease}
+.block__card:hover .block__science{opacity:1;max-height:200px}
+.block__science-icon{flex-shrink:0;margin-top:1px}
+
+/* ---- Warning pulse ---- */
+.block--warn .block__card{border-color:rgba(244,33,46,0.2)}
+.block--warn .block__card::after{content:'';position:absolute;inset:-2px;
+  border-radius:var(--radius);border:1px solid rgba(244,33,46,0.15);
+  animation:warnPulse 2.5s ease-in-out infinite;pointer-events:none}
+@keyframes warnPulse{
+  0%,100%{opacity:0;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.005)}
+}
+.block--warn .block__title{color:var(--warn)}
+
+/* ---- Cutoff badge ---- */
+.cutoff-badge{display:inline-block;font-family:var(--mono);font-size:.6rem;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:4px;
+  margin-left:8px;vertical-align:middle}
+.cutoff-badge--red{background:rgba(244,33,46,0.15);color:var(--warn)}
+.cutoff-badge--orange{background:rgba(249,25,127,0.15);color:var(--orange)}
+
+/* ---- Current block indicator ---- */
+.block--current .block__card{border-color:rgba(29,155,240,0.25);
+  box-shadow:0 0 24px rgba(29,155,240,0.08)}
+.block--current::after{content:'NOW';position:absolute;top:28px;right:-4px;
+  font-family:var(--mono);font-size:.55rem;font-weight:800;letter-spacing:1.5px;
+  color:var(--green-light);background:var(--green-deep);padding:2px 8px;border-radius:4px;z-index:3}
+
+/* ---- Timeline dot connector ---- */
+.block__dot{position:absolute;left:50%;top:32px;width:12px;height:12px;
+  border-radius:50%;border:2px solid var(--border);background:var(--bg);
+  transform:translateX(-50%);z-index:2;transition:border-color .3s ease}
+.block__card:hover ~ .block__dot,
+.block:hover .block__dot{border-color:var(--green-mid)}
+.block--current .block__dot{border-color:var(--green-light);background:var(--green-mid);
+  box-shadow:0 0 8px rgba(29,155,240,0.4)}
+
+/* ---- Section divider ---- */
+.timeline-divider{text-align:center;padding:16px 0 24px;position:relative}
+.timeline-divider__text{font-family:var(--mono);font-size:.65rem;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--text3);
+  background:var(--bg);padding:0 16px;display:inline-block;position:relative;z-index:2}
+
+/* ---- Footer link ---- */
+.footer-link{display:block;text-align:center;padding:0 24px 60px;
+  font-size:.82rem;color:var(--text3)}
+.footer-link a{color:var(--green-mid);text-decoration:none;font-weight:600}
+.footer-link a:hover{color:var(--green-light)}
+
+/* ---- Nav Link ---- */
+.nav-back{position:fixed;top:16px;left:16px;z-index:999;
+  font-family:var(--mono);font-size:.72rem;font-weight:600;
+  color:var(--text3);text-decoration:none;
+  padding:8px 14px;background:var(--bg-card);backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:100px;
+  transition:color .2s,border-color .2s}
+.nav-back:hover{color:var(--green-light);border-color:var(--green-mid)}
+
+/* ---- Toggle Switch ---- */
+.day-toggle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 0 24px 20px;
+}
+.day-toggle-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text2);
+  transition: color 0.3s ease;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: var(--purple);
+  transition: .3s;
+  border-radius: 24px;
+}
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+input:checked + .toggle-slider {
+  background-color: var(--blue);
+}
+input:checked + .toggle-slider:before {
+  transform: translateX(20px);
+}
+.is-rest-day .day-toggle-label--gym { color: var(--text3); }
+.is-rest-day .day-toggle-label--rest { color: var(--blue); }
+body:not(.is-rest-day) .day-toggle-label--gym { color: var(--purple); }
+body:not(.is-rest-day) .day-toggle-label--rest { color: var(--text3); }
+
+.is-rest-day .gym-content { display: none !important; }
+body:not(.is-rest-day) .rest-content { display: none !important; }
+
+/* ---- Responsive ---- */
+@media(max-width:640px){
+  .timeline::before{left:20px}
+  .block__dot{left:20px}
+  .block__card{margin-left:36px}
+  .block--current::after{right:8px}
+  .header{padding:60px 20px 32px}
+  .header__title{font-size:1.8rem}
+  .block__card{padding:18px 20px}
+  .block__icon{font-size:1.3rem;width:28px}
+  .block__science{opacity:1;max-height:200px}
+  .legend{gap:10px}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar"><div class="progress-bar__fill" id="progress"></div></div>
+<a href="./" class="nav-back">Life System</a>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header__badge">OPTIMIZED DAILY PROTOCOL — V2</div>
+  <h1 class="header__title">Wassim's <span>Optimal Day</span></h1>
+  <p class="header__date" id="today-date"></p>
+  <p class="header__quote">"<strong>Win the morning, win the day.</strong>"</p>
+</header>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend__item"><span class="legend__dot legend__dot--focus"></span>Focus / Coding</div>
+  <div class="legend__item"><span class="legend__dot legend__dot--gym"></span>Gym</div>
+  <div class="legend__item"><span class="legend__dot legend__dot--body"></span>Body / Nutrition</div>
+  <div class="legend__item"><span class="legend__dot legend__dot--energy"></span>Energy / Caffeine</div>
+  <div class="legend__item"><span class="legend__dot legend__dot--wind"></span>Wind-down</div>
+</div>
+
+<!-- DAY TOGGLE -->
+<div class="day-toggle-container">
+  <span class="day-toggle-label day-toggle-label--gym">Gym Day</span>
+  <label class="toggle-switch">
+    <input type="checkbox" id="rest-day-toggle">
+    <span class="toggle-slider"></span>
+  </label>
+  <span class="day-toggle-label day-toggle-label--rest">Rest Day</span>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline" id="timeline">
+
+  <!-- ═══ MORNING ═══ -->
+  <div class="timeline-divider"><span class="timeline-divider__text">☀️ MORNING</span></div>
+
+  <!-- 6:30 Wake -->
+  <div class="block" data-start="6.5" data-end="7">
+    <div class="block__card">
+      <div class="block__accent block__accent--body"></div>
+      <div class="block__icon">☀️</div>
+      <div class="block__body">
+        <div class="block__time">6:30 AM</div>
+        <div class="block__title">Wake Up</div>
+        <div class="block__desc">Hydrate immediately (500ml water). Get direct sunlight within 30 minutes — sets your circadian clock. Light stretch or walk. <strong>No phone.</strong></div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 7:00 Breakfast -->
+  <div class="block" data-start="7" data-end="8">
+    <div class="block__card">
+      <div class="block__accent block__accent--body"></div>
+      <div class="block__icon">🥗</div>
+      <div class="block__body">
+        <div class="block__time">7:00 – 8:00 AM</div>
+        <div class="block__title">Breakfast Window</div>
+        <div class="block__desc">Protein-heavy meal — eggs, oats, fruit. Fuel for the deep work ahead. No sugar spikes — keep it clean.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- ═══ DEEP WORK MORNING ═══ -->
+  <div class="timeline-divider"><span class="timeline-divider__text">💻 DEEP WORK — UNBROKEN BLOCK</span></div>
+
+  <!-- 8:00 Deep Work Start -->
+  <div class="block" data-start="8" data-end="9">
+    <div class="block__card">
+      <div class="block__accent block__accent--focus"></div>
+      <div class="block__icon">💻</div>
+      <div class="block__body">
+        <div class="block__time">8:00 – 9:00 AM</div>
+        <div class="block__title">Deep Work — Hardest Tasks First</div>
+        <div class="block__desc">Your hardest coding problems go here. 42 projects, algorithms, system design. Phone stays off. No meetings, no distractions.</div>
+        <div class="block__science"><span class="block__science-icon">🧠</span> Peak prefrontal cortex activity occurs in the morning — cortisol-driven alertness is highest 1–2hrs after waking. Use this window for your hardest problems.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 9:00 Coffee -->
+  <div class="block" data-start="9" data-end="9.25">
+    <div class="block__card">
+      <div class="block__accent block__accent--energy"></div>
+      <div class="block__icon">☕</div>
+      <div class="block__body">
+        <div class="block__time">9:00 – 9:15 AM</div>
+        <div class="block__title">First Coffee</div>
+        <div class="block__desc">90 minutes after waking = optimal timing. Adenosine has built up enough for caffeine to actually work.</div>
+        <div class="block__science"><span class="block__science-icon"></span> Wait 90 min after waking — lets adenosine clear naturally so caffeine binds more effectively. Drinking coffee immediately on wake blocks the signal but doesn't clear it — causing a crash later.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 9:15 Deep Work continues -->
+  <div class="block" data-start="9.25" data-end="12">
+    <div class="block__card">
+      <div class="block__accent block__accent--focus"></div>
+      <div class="block__icon">💻</div>
+      <div class="block__body">
+        <div class="block__time">9:15 AM – 12:00 PM</div>
+        <div class="block__title">Deep Work — Morning Block</div>
+        <div class="block__desc">~2.75 hours of uninterrupted deep coding. 42 projects, algorithms, peer learning. Caffeine is active, PFC is peaking. <strong>This is your highest-output window of the entire day.</strong></div>
+        <div class="block__science"><span class="block__science-icon">🔬</span> Cognitive performance is highest before lunch. Prioritize complex problem solving here.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- ═══ MIDDAY ═══ -->
+  <div class="timeline-divider"><span class="timeline-divider__text">🔄 TRANSITION</span></div>
+
+  <!-- 12:00 Lunch -->
+  <div class="block" data-start="12" data-end="12.5">
+    <div class="block__card">
+      <div class="block__accent block__accent--body"></div>
+      <div class="block__icon">🥗</div>
+      <div class="block__body">
+        <div class="block__time">12:00 – 12:30 PM</div>
+        <div class="block__title">Lunch</div>
+        <div class="block__desc">Balanced meal — protein, complex carbs, vegetables. Excellent timing for energy.</div>
+        <div class="block__science"><span class="block__science-icon">🔬</span> Digestion and insulin sensitivity are strong in late morning → early afternoon. Matches your natural circadian hunger peak.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 12:30 Deep Work Part 2 -->
+  <div class="block" data-start="12.5" data-end="14">
+    <div class="block__card">
+      <div class="block__accent block__accent--focus"></div>
+      <div class="block__icon">💻</div>
+      <div class="block__body">
+        <div class="block__time">12:30 – 2:00 PM</div>
+        <div class="block__title">Deep Work — Afternoon Block</div>
+        <div class="block__desc">After a quick lunch, jump right back into deep work to finish your primary tasks for the day. ~1.5 hours of solid coding.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 13:00 Last Coffee WARNING -->
+  <div class="block block--warn" data-start="13" data-end="13.5">
+    <div class="block__card">
+      <div class="block__accent block__accent--warn"></div>
+      <div class="block__icon">☕</div>
+      <div class="block__body">
+        <div class="block__time">1:00 – 1:30 PM <span class="cutoff-badge cutoff-badge--orange">HARD CUTOFF</span></div>
+        <div class="block__title">Last Coffee Window ⚠️</div>
+        <div class="block__desc">This is your <strong>absolute last chance</strong> for caffeine today. After 1:30 PM, no coffee, no tea, no energy drinks, no chocolate.</div>
+        <div class="block__science"><span class="block__science-icon">⚠️</span> Caffeine half-life: 3–7hrs (avg ~5hrs). Varies by genetics. After 1:30 PM it disrupts sleep architecture — reduced deep sleep and REM even if you "fall asleep fine."</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 14:00 Lighter work -->
+  <div class="block" data-start="14" data-end="16">
+    <div class="block__card">
+      <div class="block__accent block__accent--focus"></div>
+      <div class="block__icon">💻</div>
+      <div class="block__body">
+        <div class="block__time">2:00 – 4:00 PM</div>
+        <div class="block__title">Light Work — Reviews & Reading</div>
+        <div class="block__desc">Peer evaluations, code reviews, documentation, reading technical content. Post-meal focus is lower — save the heavy thinking for morning.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 16:00 Pre-workout -->
+  <div class="block" data-start="16" data-end="16.5">
+    <div class="block__card">
+      <div class="block__accent block__accent--body"></div>
+      <div class="block__icon">🍌</div>
+      <div class="block__body">
+        <div class="block__time">4:00 – 4:30 PM</div>
+        <div class="block__title">Pre-Workout Prep</div>
+        <div class="block__desc">Light snack — banana, rice cake, or a handful of dates. Change into gym clothes. Mental shift from coding to training mode.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- ═══ GYM ═══ -->
+  <div class="timeline-divider"><span class="timeline-divider__text">🏋️ GYM — PEAK PERFORMANCE WINDOW</span></div>
+
+  <!-- 16:30 Gym / Rest -->
+  <div class="block" data-start="16.5" data-end="18">
+    <div class="block__card">
+      <!-- Gym Content -->
+      <div class="block__accent block__accent--gym gym-content"></div>
+      <div class="block__icon gym-content">🏋️</div>
+      <div class="block__body gym-content">
+        <div class="block__time">4:30 – 6:00 PM</div>
+        <div class="block__title">Gym Session — PPL Split</div>
+        <div class="block__desc">Push / Pull / Legs rotation. 90 minutes. Progressive overload. Mind-muscle connection. No phone between sets. This is the <strong>biological peak window</strong> for strength training.</div>
+        <div class="block__science"><span class="block__science-icon">💪</span> Body temperature peaks 4–6 PM → maximum strength, pliability, and speed. Testosterone-to-cortisol ratio is optimal in late afternoon — better for muscle growth than morning. (2023 meta-analysis: consistency matters most, but afternoon has a slight edge.)</div>
+      </div>
+      <!-- Rest Content -->
+      <div class="block__accent block__accent--wind rest-content"></div>
+      <div class="block__icon rest-content">🕐</div>
+      <div class="block__body rest-content">
+        <div class="block__time">4:00 – 6:30 PM</div>
+        <div class="block__title">Free Time</div>
+        <div class="block__desc">Open block for rest day flexibility. Use for recovery, deep work, socializing, or whatever you need.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- ═══ EVENING ═══ -->
+  <div class="timeline-divider"><span class="timeline-divider__text">🌅 EVENING</span></div>
+
+  <!-- 18:00 Shower -->
+  <div class="block gym-content" data-start="18" data-end="18.5">
+    <div class="block__card">
+      <div class="block__accent block__accent--body"></div>
+      <div class="block__icon">🚿</div>
+      <div class="block__body">
+        <div class="block__time">6:00 – 6:30 PM</div>
+        <div class="block__title">Post-Workout Shower</div>
+        <div class="block__desc">Warm shower to clean up and initiate recovery. Warm water causes vasodilation later aiding in core temperature drop for sleep.</div>
+        <div class="block__science"><span class="block__science-icon">🌡️</span> Warm shower → vasodilation → heat loss → core temp drops 1–2°C → sleep onset triggered. Regular timing aids sleep architecture.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 18:30 Light review -->
+  <div class="block" data-start="18.5" data-end="19">
+    <div class="block__card">
+      <div class="block__accent block__accent--focus"></div>
+      <div class="block__icon">📋</div>
+      <div class="block__body">
+        <div class="block__time">6:30 – 7:00 PM</div>
+        <div class="block__title">Review & Plan Tomorrow</div>
+        <div class="block__desc">Review today's progress. Write down tomorrow's top 3 priorities. Close all work tabs. Mental shutdown complete.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 19:00 Post-workout Dinner -->
+  <div class="block" data-start="19" data-end="19.5">
+    <div class="block__card">
+      <div class="block__accent block__accent--body"></div>
+      <div class="block__icon">🍗</div>
+      <div class="block__body">
+        <div class="block__time">7:00 – 7:30 PM</div>
+        <div class="block__title">Post-Workout Dinner</div>
+        <div class="block__desc">Protein priority — chicken, rice, vegetables. This meal serves double duty: post-workout recovery AND dinner. <strong>Must finish by 7:30 PM.</strong> MPS peaks 24–48hrs after training — feed the process.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 19:30 Wind-down prep -->
+  <div class="block" data-start="19.5" data-end="20">
+    <div class="block__card">
+      <div class="block__accent block__accent--wind"></div>
+      <div class="block__icon">🌙</div>
+      <div class="block__body">
+        <div class="block__time">7:30 – 8:00 PM</div>
+        <div class="block__title">Wind-Down Prep</div>
+        <div class="block__desc">Close laptop. Finish any last small tasks. Prepare clothes for tomorrow. Begin dimming lights in the house.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- ═══ WIND DOWN ═══ -->
+  <div class="timeline-divider"><span class="timeline-divider__text">🌙 WIND-DOWN PROTOCOL</span></div>
+
+  <!-- 20:00 Phone OFF WARNING -->
+  <div class="block block--warn" data-start="20" data-end="20.1">
+    <div class="block__card">
+      <div class="block__accent block__accent--warn"></div>
+      <div class="block__icon">📵</div>
+      <div class="block__body">
+        <div class="block__time">8:00 PM <span class="cutoff-badge cutoff-badge--red">NON-NEGOTIABLE</span></div>
+        <div class="block__title">Phone OFF — Airplane Mode</div>
+        <div class="block__desc">Put phone on airplane mode. Charge it <strong>outside the bedroom</strong>. No screens from this point. No exceptions.</div>
+        <div class="block__science"><span class="block__science-icon">🔬</span> Blue light suppresses melatonin 30–60%. Your PFC needs deep sleep to fully restore impulse control and decision-making. Every minute of screen time here steals from tomorrow's performance.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 20:00 Read -->
+  <div class="block" data-start="20.1" data-end="21.25">
+    <div class="block__card">
+      <div class="block__accent block__accent--wind"></div>
+      <div class="block__icon">📖</div>
+      <div class="block__body">
+        <div class="block__time">8:00 – 9:15 PM</div>
+        <div class="block__title">Read or Journal</div>
+        <div class="block__desc">Physical book only — not a screen. Journal your wins and lessons from today. Dim lights to minimum. Let your mind slow down.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 21:15 Prepare room -->
+  <div class="block" data-start="21.25" data-end="21.5">
+    <div class="block__card">
+      <div class="block__accent block__accent--wind"></div>
+      <div class="block__icon">🌡️</div>
+      <div class="block__body">
+        <div class="block__time">9:15 PM</div>
+        <div class="block__title">Prepare Bedroom</div>
+        <div class="block__desc">Close curtains fully (pitch black). Set room temperature to 18°C. Cover any LED lights. Get into bed.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+  <!-- 21:30 SLEEP -->
+  <div class="block" data-start="21.5" data-end="30">
+    <div class="block__card">
+      <div class="block__accent block__accent--sleep"></div>
+      <div class="block__icon">😴</div>
+      <div class="block__body">
+        <div class="block__time">9:30 PM</div>
+        <div class="block__title">Lights Off</div>
+        <div class="block__desc">Close your eyes. If not sleepy, do 4-7-8 breathing: inhale 4 seconds, hold 7 seconds, exhale 8 seconds. Repeat 3-4 cycles.</div>
+        <div class="block__science"><span class="block__science-icon">💤</span> 9 hrs sleep = 5–6 full 90-min cycles. ~70% of growth hormone is released in the first deep sleep cycle. PFC is fully restored — critical for tomorrow's focus, willpower, and coding performance.</div>
+      </div>
+    </div>
+    <div class="block__dot"></div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer-link">
+  <a href="./">← Back to Life System Dashboard</a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  // ---- Date ----
+  const dateEl=document.getElementById('today-date');
+  const now=new Date();
+  dateEl.textContent=now.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+
+  // ---- Progress Bar ----
+  const progressEl=document.getElementById('progress');
+  function updateProgress(){
+    const n=new Date();
+    const h=n.getHours()+n.getMinutes()/60;
+    const start=6.5,end=21.5;
+    const pct=Math.max(0,Math.min(100,((h-start)/(end-start))*100));
+    progressEl.style.width=pct+'%';
+  }
+  updateProgress();
+  setInterval(updateProgress,60000);
+
+  // ---- Scroll Reveal ----
+  const blocks=document.querySelectorAll('.block');
+  blocks.forEach((b,i)=>{b.style.transitionDelay=`${i*0.04}s`});
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}
+    });
+  },{threshold:0.15,rootMargin:'0px 0px -30px 0px'});
+  blocks.forEach(b=>obs.observe(b));
+
+  // ---- Highlight current block ----
+  function highlightCurrent(){
+    const n=new Date();
+    const h=n.getHours()+n.getMinutes()/60;
+    blocks.forEach(b=>b.classList.remove('block--current'));
+    let currentBlock=null;
+    blocks.forEach(b=>{
+      const start=parseFloat(b.getAttribute('data-start'));
+      const end=parseFloat(b.getAttribute('data-end'));
+      if(h>=start&&h<end) currentBlock=b;
+    });
+    if(currentBlock) currentBlock.classList.add('block--current');
+  }
+  highlightCurrent();
+  setInterval(highlightCurrent,60000);
+
+  // ---- Smooth scroll ----
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const t=document.querySelector(a.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
+    });
+  });
+
+  // ---- Gym / Rest Toggle ----
+  const restToggle=document.getElementById('rest-day-toggle');
+  const isRest=localStorage.getItem('isRestDay')==='true';
+  restToggle.checked=isRest;
+  if(isRest) document.body.classList.add('is-rest-day');
+  
+  restToggle.addEventListener('change',(e)=>{
+    if(e.target.checked){
+      document.body.classList.add('is-rest-day');
+      localStorage.setItem('isRestDay','true');
+    }else{
+      document.body.classList.remove('is-rest-day');
+      localStorage.setItem('isRestDay','false');
+    }
+  });
+
+});
+</script>
+</body>
+</html>

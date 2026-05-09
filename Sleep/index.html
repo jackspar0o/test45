@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sleep System — Life System</title>
+  <meta name="description" content="Optimized sleep routine — 9:30pm to 6:30am — with research-backed sleep hygiene tips." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../Gym/style.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="hero" class="hero hero--has-bg" style="background-image: url('hero.png')">
+    <div class="hero__bg-pattern"></div>
+    <nav class="hero__nav">
+      <a href="../" class="nav__brand"><span class="nav__icon"></span><span>LIFE SYSTEM</span></a>
+      <div class="nav__links">
+        <a href="../" class="nav__link">← Dashboard</a>
+        <a href="#schedule" class="nav__link">Schedule</a>
+        <a href="#rules" class="nav__link">Rules</a>
+        <a href="#routine" class="nav__link">Routine</a>
+        <a href="#science" class="nav__link">Science</a>
+      </div>
+      <div class="nav__actions">
+        <button id="mobile-menu-btn" class="nav__mobile-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="hero__content hero__content--compact">
+      <div class="hero__badge">SLEEP OPTIMIZATION</div>
+      <h1 class="hero__title"><span class="hero__title-line">SLEEP</span><span class="hero__title-line hero__title-line--accent">SYSTEM</span></h1>
+      <p class="hero__subtitle">9:30 PM → 6:30 AM — 9 Hours — Fixed Schedule Every Day</p>
+      <div class="hero__stats">
+        <div class="stat-card"><span class="stat-card__number">9h</span><span class="stat-card__label">Sleep Duration</span></div>
+        <div class="stat-card"><span class="stat-card__number">21:30</span><span class="stat-card__label">Bedtime</span></div>
+        <div class="stat-card"><span class="stat-card__number">06:30</span><span class="stat-card__label">Wake Up</span></div>
+        <div class="stat-card"><span class="stat-card__number">5–6</span><span class="stat-card__label">Sleep Cycles</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LIVE CLOCK -->
+  <section id="schedule" class="section sleep-clock-section">
+    <div class="container">
+      <div class="sleep-clock">
+        <div class="sleep-clock__time" id="sleep-clock">00:00:00</div>
+        <div class="sleep-clock__status" id="sleep-status">—</div>
+        <div class="sleep-clock__bar-wrap">
+          <div class="sleep-clock__bar" id="sleep-bar"></div>
+        </div>
+        <div class="sleep-clock__labels">
+          <span>21:30 — Bedtime</span>
+          <span>06:30 — Wake Up</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLEEP RULES -->
+  <section id="rules" class="section tips-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">NON-NEGOTIABLE RULES</span>
+        <h2 class="section__title">Sleep Hygiene Rules</h2>
+        <p class="section__desc">Break any of these and your sleep quality drops. No exceptions.</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+          <h3 class="tip-card__title">No Caffeine After 1:30 PM ☕</h3>
+          <p class="tip-card__text">Caffeine has a half-life of <strong>3–7 hours (average ~5 hours)</strong>. Varies by genetics, liver enzymes, medications, and smoking status. To sleep at 9:30 PM, your last caffeine should be before 1:30 PM (8 hours before bed). This includes coffee, tea, energy drinks, and chocolate. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/24235903/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Study: Effects of caffeine on sleep (NIH)</a></p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+          <h3 class="tip-card__title">No Phone 90min Before & After Sleep 📱</h3>
+          <p class="tip-card__text"><strong>Before sleep (after 8:00 PM)</strong>: Blue light can suppress melatonin by 30–60% depending on light intensity, duration, and individual sensitivity. Put your phone away at 8:00 PM. <strong>After waking (until 8:00 AM)</strong>: Checking your phone first thing triggers a cortisol spike and puts you in reactive mode. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/25535358/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Study: Blue light and melatonin (Harvard)</a></p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3 class="tip-card__title">Same Time Every Day ⏰</h3>
+          <p class="tip-card__text">Your circadian rhythm needs <strong>consistency</strong>. Sleeping at 9:30 PM and waking at 6:30 AM — even on weekends — is critical. "Social jetlag" from irregular weekend sleep is linked to higher obesity, depression, and cardiovascular risk. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/28364486/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Study: Social jetlag and health (NIH)</a></p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></div>
+          <h3 class="tip-card__title">Complete Darkness 🌑</h3>
+          <p class="tip-card__text">Even <strong>dim light during sleep reduces melatonin</strong> and disrupts deep sleep phases. Use blackout curtains, cover all LEDs, and if needed use a sleep mask. Your room should be pitch black. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/35316830/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Study: Light exposure during sleep (NIH)</a></p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/></svg></div>
+          <h3 class="tip-card__title">Cool Room: 18-20°C 🌡️</h3>
+          <p class="tip-card__text">Your core body temperature needs to <strong>drop 1-2°C</strong> to initiate deep sleep. Sleeping in a room around 18°C (65°F) is optimal. Hot rooms are scientifically proven to reduce deep sleep and increase nighttime awakenings. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/22738673/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Study: Temperature and sleep (NIH)</a></p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-card__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg></div>
+          <h3 class="tip-card__title">No Heavy Meals After 7:30 PM 🍽️</h3>
+          <p class="tip-card__text">Eating 2+ hours before bed gives your body time to digest. Large meals before sleep increase <strong>gastric acid, body temperature</strong>, and can disrupt sleep cycles. A light snack (like a banana or almonds) is fine. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/26156950/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Study: Late eating and sleep (NIH)</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENING ROUTINE -->
+  <section id="routine" class="section workout-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">EVENING PROTOCOL</span>
+        <h2 class="section__title">Your Night Routine</h2>
+        <p class="section__desc">A structured wind-down from 8:00 PM to lights off at 9:30 PM.</p>
+      </div>
+      <div class="sleep-routine">
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">7:30 PM</span>
+          <div class="sleep-routine__dot"></div>
+          <div class="sleep-routine__content">
+            <h3>Last Meal</h3>
+            <p>Finish dinner. No more food after this. Light snack ok (banana, nuts).</p>
+          </div>
+        </div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">8:00 PM</span>
+          <div class="sleep-routine__dot sleep-routine__dot--alert"></div>
+          <div class="sleep-routine__content">
+            <h3>Phone Down 📵</h3>
+            <p>Put phone on airplane mode, charge it OUTSIDE the bedroom. No screens from now.</p>
+          </div>
+        </div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">8:00 – 8:30</span>
+          <div class="sleep-routine__dot"></div>
+          <div class="sleep-routine__content">
+            <h3>Shower / Hygiene</h3>
+            <p>Warm shower (drops core temperature after, helps sleep). Brush teeth, skincare.</p>
+          </div>
+        </div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">8:30 – 9:15</span>
+          <div class="sleep-routine__dot"></div>
+          <div class="sleep-routine__content">
+            <h3>Wind Down: Read or Journal</h3>
+            <p>Read a physical book (not screen). Journal your day. Plan tomorrow. Dim lights.</p>
+          </div>
+        </div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">9:15 PM</span>
+          <div class="sleep-routine__dot"></div>
+          <div class="sleep-routine__content">
+            <h3>Prepare Bedroom</h3>
+            <p>Close curtains fully, set room to 18°C, no lights. Get in bed.</p>
+          </div>
+        </div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">9:30 PM</span>
+          <div class="sleep-routine__dot sleep-routine__dot--sleep"></div>
+          <div class="sleep-routine__content">
+            <h3>Lights Off 💤</h3>
+            <p>Close your eyes. If not sleepy, do deep breathing: 4 seconds in, 7 seconds hold, 8 seconds out.</p>
+          </div>
+        </div>
+        <div class="sleep-routine__divider">☀️ MORNING</div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">6:30 AM</span>
+          <div class="sleep-routine__dot sleep-routine__dot--wake"></div>
+          <div class="sleep-routine__content">
+            <h3>Wake Up ☀️</h3>
+            <p>Get up immediately. No snooze button — it fragments your last sleep cycle. Get sunlight within 30 minutes.</p>
+          </div>
+        </div>
+        <div class="sleep-routine__item">
+          <span class="sleep-routine__time">6:30 – 8:00</span>
+          <div class="sleep-routine__dot"></div>
+          <div class="sleep-routine__content">
+            <h3>Phone-Free Morning</h3>
+            <p>No phone for 90 minutes. Hydrate, stretch, and focus on yourself before the world pulls your attention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section id="science" class="section tips-section" style="background: linear-gradient(180deg, var(--bg-dark), var(--bg-darkest));">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">RESOURCES & RESEARCH</span>
+        <h2 class="section__title">Why Sleep is Non-Negotiable</h2>
+      </div>
+      <div class="tips-grid tips-grid--2col">
+        <div class="tip-card">
+          <h3 class="tip-card__title">🧠 Cognitive Performance</h3>
+          <p class="tip-card__text">Sleeping only 6hrs/night for 14 consecutive days produces cognitive deficits equivalent to going <strong>1 full night without sleep</strong> — and subjects don't feel as impaired as they are (Van Dongen et al., Sleep 2003). <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/12683469/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Van Dongen et al., Sleep 2003</a></p>
+        </div>
+        <div class="tip-card">
+          <h3 class="tip-card__title">💪 Muscle & Testosterone</h3>
+          <p class="tip-card__text">70% of your daily growth hormone is released during deep sleep. Men who sleep 5 hours have <strong>testosterone levels 10-15% lower</strong> than those sleeping 8+ hours. Sleep is when your muscles actually grow. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/21632481/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Leproult & Van Cauter, JAMA 2011</a></p>
+        </div>
+        <div class="tip-card">
+          <h3 class="tip-card__title">⚖️ Weight Management</h3>
+          <p class="tip-card__text">Sleep deprivation increases <strong>ghrelin (hunger hormone) by 28%</strong> and decreases leptin (satiety hormone). This is why you crave junk food when tired. Proper sleep is essential for body composition. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/15583226/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Spiegel et al., Annals of Int. Med. 2004</a></p>
+        </div>
+        <div class="tip-card">
+          <h3 class="tip-card__title">❤️ Heart Health</h3>
+          <p class="tip-card__text">People sleeping less than 6 hours have a <strong>48% higher risk</strong> of dying from heart disease. Your cardiovascular system repairs during sleep. Chronic sleep loss is as dangerous as smoking. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/20920190/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Cappuccio et al., Eur Heart Journal 2011</a></p>
+        </div>
+        </div>
+        <div class="tip-card" style="margin-top: 2%;">
+          <h3 class="tip-card__title">🧠 Emotional Regulation</h3>
+          <p class="tip-card__text">Sleep deprivation severs the regulatory connection between the prefrontal cortex and amygdala — the brain's emotional alarm system becomes <strong>up to 60% more reactive</strong> to negative stimuli, explaining mood crashes, irritability, and poor judgment from insufficient sleep. <br><br><a href="https://pubmed.ncbi.nlm.nih.gov/29073412/" target="_blank" style="color:var(--green-light);font-size:0.78rem;">📄 Krause et al., Nature Human Behaviour, 2017</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><div class="footer__content">
+      <p class="footer__text">Part of the <strong>Life System</strong></p>
+      <div class="footer__links"><a href="../" class="footer__link">← Dashboard</a><a href="../Gym/" class="footer__link">Gym System</a><a href="../NoFap/" class="footer__link">NoFap</a></div>
+      <p class="footer__copy">Sleep is the greatest legal performance-enhancing drug. — Matthew Walker</p>
+    </div></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

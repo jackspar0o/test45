@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym System — Life System</title>
+  <meta name="description" content="Personal gym training system — Push/Pull/Legs split for building muscle and strength. 5 sessions per week, 1h30 each." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ====== HERO ====== -->
+  <header id="hero" class="hero hero--has-bg" style="background-image: url('hero.png')">
+    <div class="hero__bg-pattern"></div>
+    <nav class="hero__nav">
+      <a href="#" class="nav__brand">
+        <span class="nav__icon"></span>
+        <span>LIFE SYSTEM</span>
+      </a>
+      <div class="nav__links">
+        <a href="#schedule" class="nav__link" data-i18n="navSchedule">Schedule</a>
+        <a href="#push" class="nav__link" data-i18n="navPush">Push</a>
+        <a href="#pull" class="nav__link" data-i18n="navPull">Pull</a>
+        <a href="#legs" class="nav__link" data-i18n="navLegs">Legs</a>
+        <a href="#tips" class="nav__link" data-i18n="navTips">Tips</a>
+        <a href="advanced.html" class="nav__link nav__link--cta" data-i18n="navAdvLink">Advanced →</a>
+      </div>
+      <div class="nav__actions">
+        <button id="lang-toggle" class="lang-btn" aria-label="Toggle language"><span class="lang-btn__en">عربي</span></button>
+        <button id="mobile-menu-btn" class="nav__mobile-btn" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero__content">
+      <div class="hero__badge" data-i18n="heroBadge">EARLY INTERMEDIATE PROGRAM — MONTH 2 TO 6</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line" data-i18n="heroTitle1">GYM</span>
+        <span class="hero__title-line hero__title-line--accent" data-i18n="heroTitle2">SYSTEM</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="heroSubtitle">Push / Pull / Legs — 5 Sessions Per Week — 1h 30min Each</p>
+      <div class="hero__stats">
+        <div class="stat-card">
+          <span class="stat-card__number">5</span>
+          <span class="stat-card__label" data-i18n="sessionsWeek">Sessions / Week</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">90</span>
+          <span class="stat-card__label" data-i18n="minSession">Minutes / Session</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">3</span>
+          <span class="stat-card__label" data-i18n="setsExercise">Sets / Exercise</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__number">PPL</span>
+          <span class="stat-card__label" data-i18n="splitType">Split Type</span>
+        </div>
+      </div>
+      <a href="#schedule" class="hero__cta">
+        <span data-i18n="viewSchedule">View Schedule</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7.8H7.8"/></svg>
+      </a>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </header>
+
+  <!-- ====== WEEKLY SCHEDULE ====== -->
+  <section id="schedule" class="section schedule-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="weeklyTag">WEEKLY OVERVIEW</span>
+        <h2 class="section__title" data-i18n="scheduleTitle">Training Schedule</h2>
+        <p class="section__desc" data-i18n="scheduleDesc">Two rotation options — choose what fits your week best. The split ensures each muscle group gets trained twice and proper recovery time.</p>
+      </div>
+
+      <div class="schedule-rotations">
+        <!-- Rotation A -->
+        <div class="rotation">
+          <h3 class="rotation__title">
+            <span class="rotation__badge">A</span>
+            Rotation A — With Rest Days Between
+          </h3>
+          <div class="week-grid" id="rotation-a">
+            <div class="day-card day-card--push">
+              <span class="day-card__day">Monday</span>
+              <span class="day-card__type">PUSH</span>
+              <span class="day-card__muscles">Chest · Shoulders · Triceps</span>
+            </div>
+            <div class="day-card day-card--rest">
+              <span class="day-card__day">Tuesday</span>
+              <span class="day-card__type">REST</span>
+              <span class="day-card__muscles">Recovery & Stretching</span>
+            </div>
+            <div class="day-card day-card--pull">
+              <span class="day-card__day">Wednesday</span>
+              <span class="day-card__type">PULL</span>
+              <span class="day-card__muscles">Back · Biceps · Rear Delts</span>
+            </div>
+            <div class="day-card day-card--rest">
+              <span class="day-card__day">Thursday</span>
+              <span class="day-card__type">REST</span>
+              <span class="day-card__muscles">Recovery & Stretching</span>
+            </div>
+            <div class="day-card day-card--legs">
+              <span class="day-card__day">Friday</span>
+              <span class="day-card__type">LEGS</span>
+              <span class="day-card__muscles">Quads · Hamstrings · Calves</span>
+            </div>
+            <div class="day-card day-card--push">
+              <span class="day-card__day">Saturday</span>
+              <span class="day-card__type">PUSH</span>
+              <span class="day-card__muscles">Chest · Shoulders · Triceps</span>
+            </div>
+            <div class="day-card day-card--pull">
+              <span class="day-card__day">Sunday</span>
+              <span class="day-card__type">PULL</span>
+              <span class="day-card__muscles">Back · Biceps · Rear Delts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rotation B -->
+        <div class="rotation">
+          <h3 class="rotation__title">
+            <span class="rotation__badge">B</span>
+            Rotation B — Consecutive Days
+          </h3>
+          <div class="week-grid" id="rotation-b">
+            <div class="day-card day-card--push">
+              <span class="day-card__day">Monday</span>
+              <span class="day-card__type">PUSH</span>
+              <span class="day-card__muscles">Chest · Shoulders · Triceps</span>
+            </div>
+            <div class="day-card day-card--pull">
+              <span class="day-card__day">Tuesday</span>
+              <span class="day-card__type">PULL</span>
+              <span class="day-card__muscles">Back · Biceps · Rear Delts</span>
+            </div>
+            <div class="day-card day-card--legs">
+              <span class="day-card__day">Wednesday</span>
+              <span class="day-card__type">LEGS</span>
+              <span class="day-card__muscles">Quads · Hamstrings · Calves</span>
+            </div>
+            <div class="day-card day-card--push">
+              <span class="day-card__day">Thursday</span>
+              <span class="day-card__type">PUSH</span>
+              <span class="day-card__muscles">Chest · Shoulders · Triceps</span>
+            </div>
+            <div class="day-card day-card--pull">
+              <span class="day-card__day">Friday</span>
+              <span class="day-card__type">PULL</span>
+              <span class="day-card__muscles">Back · Biceps · Rear Delts</span>
+            </div>
+            <div class="day-card day-card--rest">
+              <span class="day-card__day">Saturday</span>
+              <span class="day-card__type">REST</span>
+              <span class="day-card__muscles">Recovery & Stretching</span>
+            </div>
+            <div class="day-card day-card--rest">
+              <span class="day-card__day">Sunday</span>
+              <span class="day-card__type">REST</span>
+              <span class="day-card__muscles">Recovery & Stretching</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PUSH DAY ====== -->
+  <section id="push" class="section workout-section">
+    <div class="container">
+      <div class="workout-header">
+        <div class="workout-header__icon push-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div>
+          <span class="section__tag" data-i18n="workoutA">WORKOUT A</span>
+          <h2 class="section__title" data-i18n="pushTitle">Push Day</h2>
+          <p class="workout-header__targets" data-i18n="pushTargets">Targets: <strong>Chest</strong>, <strong>Front & Side Shoulders</strong>, <strong>Triceps</strong></p>
+        </div>
+      </div>
+
+      <div class="workout-note" style="border-left-color:#e0965a;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e0965a" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p><strong>New to lifting? (Under 2 months):</strong> Start with full-body training 3×/week to build movement patterns and neural adaptation before transitioning to this PPL split. PPL 5×/week trains each muscle only once per week — the intermediate PPL 6×/week schedule achieves the optimal 2×/week muscle frequency.</p>
+      </div>
+
+      <div class="workout-note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <p><strong>Muscle Protein Synthesis:</strong> MPS peaks ~24–48hrs after training and returns to baseline. For maximum growth, each muscle group should be trained 2× per week — achieved in the intermediate program.</p>
+      </div>
+
+      <div class="workout-note">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <p>This day trains 3 main muscle groups: chest, front and side shoulders, and triceps. <strong>Make sure to do your warm up before starting.</strong></p>
+      </div>
+
+      <div class="warmup-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <a href="https://www.youtube.com/watch?v=u7AFpzWV2I8" target="_blank" rel="noopener">Good Warm Up Routine (YouTube)</a>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="exercise-table" id="push-table">
+          <thead>
+            <tr>
+              <th class="th-num">#</th>
+              <th class="th-exercise">Exercise</th>
+              <th class="th-sets">Sets</th>
+              <th class="th-reps">Reps</th>
+              <th class="th-link">Technique</th>
+              <th class="th-notes">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-num">1</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Bench Press</span>
+                <span class="exercise-muscle">Chest</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-bench-press" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">Warm up is very important to not hurt your shoulders.</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">2</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Incline Dumbbell Press</span>
+                <span class="exercise-muscle">Upper Chest</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-incline-bench-press" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">3</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Cable Flies</span>
+                <span class="exercise-muscle">Chest (Inner)</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/cable-pec-fly" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">4</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Shoulder Press</span>
+                <span class="exercise-muscle">Shoulders (Front)</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-seated-overhead-press" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">5</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Lateral Raises</span>
+                <span class="exercise-muscle">Shoulders (Side)</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-lateral-raise" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">6</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Tricep Pushdown</span>
+                <span class="exercise-muscle">Triceps</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/cable-rope-pushdown" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">7</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Skull Crusher</span>
+                <span class="exercise-muscle">Triceps</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-skullcrusher" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">Don't use big barbell, use short small ones.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PULL DAY ====== -->
+  <section id="pull" class="section workout-section workout-section--alt">
+    <div class="container">
+      <div class="workout-header">
+        <div class="workout-header__icon pull-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div>
+          <span class="section__tag" data-i18n="workoutB">WORKOUT B</span>
+          <h2 class="section__title" data-i18n="pullTitle">Pull Day</h2>
+          <p class="workout-header__targets" data-i18n="pullTargets">Targets: <strong>Back</strong>, <strong>Biceps</strong>, <strong>Rear Delts</strong>, <strong>Traps</strong></p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="exercise-table" id="pull-table">
+          <thead>
+            <tr>
+              <th class="th-num">#</th>
+              <th class="th-exercise">Exercise</th>
+              <th class="th-sets">Sets</th>
+              <th class="th-reps">Reps</th>
+              <th class="th-link">Technique</th>
+              <th class="th-notes">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-num">1</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Lat Pulldown</span>
+                <span class="exercise-muscle">Back (Lats)</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/machine-pulldown" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">2</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Bent Over Row</span>
+                <span class="exercise-muscle">Back (Mid)</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-bent-over-row" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text highlight-note">DO IT WITH SMITH MACHINE</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">3</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Seated Cable Row</span>
+                <span class="exercise-muscle">Back (Mid)</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/machine-seated-cable-row" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">4</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Face Pull</span>
+                <span class="exercise-muscle">Rear Delts · Traps</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/machine-face-pulls" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">5</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Bicep Curl</span>
+                <span class="exercise-muscle">Biceps</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-curl" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">6</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Hammer Curl</span>
+                <span class="exercise-muscle">Biceps · Forearms</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-hammer-curl" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">7</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Shrug</span>
+                <span class="exercise-muscle">Traps</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-shrug" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">You can do it using dumbbells, barbell, smith machine, or even cables.</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== LEG DAY ====== -->
+  <section id="legs" class="section workout-section">
+    <div class="container">
+      <div class="workout-header">
+        <div class="workout-header__icon legs-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div>
+          <span class="section__tag" data-i18n="workoutC">WORKOUT C</span>
+          <h2 class="section__title" data-i18n="legsTitle">Leg Day</h2>
+          <p class="workout-header__targets" data-i18n="legsTargets">Targets: <strong>Quads</strong>, <strong>Hamstrings</strong>, <strong>Glutes</strong>, <strong>Calves</strong></p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="exercise-table" id="legs-table">
+          <thead>
+            <tr>
+              <th class="th-num">#</th>
+              <th class="th-exercise">Exercise</th>
+              <th class="th-sets">Sets</th>
+              <th class="th-reps">Reps</th>
+              <th class="th-link">Technique</th>
+              <th class="th-notes">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-num">1</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Squat</span>
+                <span class="exercise-muscle">Quads · Glutes</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-squat" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">2</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Romanian Deadlift</span>
+                <span class="exercise-muscle">Hamstrings · Glutes</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-romanian-deadlift" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">3</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Bulgarian Split Squat</span>
+                <span class="exercise-muscle">Quads · Glutes</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/dumbbell-bulgarian-split-squat" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">4</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Cable Pull Through</span>
+                <span class="exercise-muscle">Glutes · Hamstrings</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/cable-pull-through" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+            <tr>
+              <td class="td-num">5</td>
+              <td class="td-exercise">
+                <span class="exercise-name">Calf Raises</span>
+                <span class="exercise-muscle">Calves</span>
+              </td>
+              <td class="td-sets">3</td>
+              <td class="td-reps"><span class="reps-scheme">12 → 10 → 8</span></td>
+              <td class="td-link"><a href="https://musclewiki.com/exercise/barbell-calf-raises" target="_blank" rel="noopener" class="wiki-link"><span>MuscleWiki</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></td>
+              <td class="td-notes"><span class="note-text">—</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== TIPS SECTION ====== -->
+  <section id="tips" class="section tips-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="tipsTag">KNOWLEDGE BASE</span>
+        <h2 class="section__title" data-i18n="tipsTitle">General Notes & Tips</h2>
+        <p class="section__desc" data-i18n="tipsDesc">Essential guidelines for your training — especially important as a beginner.</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+          </div>
+          <h3 class="tip-card__title" data-i18n="tip1Title">Don't Go to Failure (Yet)</h3>
+          <p class="tip-card__text" data-i18n="tip1Text">As a beginner, you shouldn't go to failure on your sets. Once you've been training for 4-5 months, then failure on each set becomes necessary for growth.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="tip-card__title" data-i18n="tip2Title">Progressive Overload</h3>
+          <p class="tip-card__text" data-i18n="tip2Text">Start with comfortable weights and progressively move to heavier ones. <strong>DO NOT START WITH HEAVY WEIGHTS.</strong> Your joints and tendons need time to adapt.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </div>
+          <h3 class="tip-card__title">Always Warm Up</h3>
+          <p class="tip-card__text">Never skip your warm up. Cold muscles are injury-prone muscles. Do 5-10 minutes of light cardio followed by dynamic stretches before every session.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="tip-card__title">Rep Scheme: 12 → 10 → 8</h3>
+          <p class="tip-card__text">Pyramid down your reps across 3 sets. Start lighter with 12 reps, increase weight for 10, then go heavier for 8. This builds both endurance and strength.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          </div>
+          <h3 class="tip-card__title">Rest Between Sets</h3>
+          <p class="tip-card__text">Rest 60-90 seconds between sets for hypertrophy. For compound exercises like bench press or squats, you can rest up to 2-3 minutes.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="tip-card__title">Form Over Ego</h3>
+          <p class="tip-card__text">Perfect form with lighter weight beats terrible form with heavy weight. Watch the MuscleWiki technique videos linked in each exercise to learn proper form.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== REP SCHEME EXPLAINER ====== -->
+  <section class="section rep-section">
+    <div class="container">
+      <div class="rep-explainer">
+        <div class="rep-explainer__header">
+          <h3>Understanding the Rep Scheme</h3>
+          <p>Every exercise follows the same pattern across 3 sets</p>
+        </div>
+        <div class="rep-visual">
+          <div class="rep-set">
+            <span class="rep-set__number">SET 1</span>
+            <span class="rep-set__reps">12</span>
+            <span class="rep-set__label">reps — lighter weight</span>
+            <div class="rep-set__bar" style="width: 100%"></div>
+          </div>
+          <div class="rep-set">
+            <span class="rep-set__number">SET 2</span>
+            <span class="rep-set__reps">10</span>
+            <span class="rep-set__label">reps — moderate weight</span>
+            <div class="rep-set__bar" style="width: 83%"></div>
+          </div>
+          <div class="rep-set">
+            <span class="rep-set__number">SET 3</span>
+            <span class="rep-set__reps">8</span>
+            <span class="rep-set__label">reps — heavier weight</span>
+            <div class="rep-set__bar" style="width: 66%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROFILE & STATS ====== -->
+  <section id="profile" class="section profile-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="profileTag">ATHLETE PROFILE</span>
+        <h2 class="section__title" data-i18n="profileTitle">Personal Stats</h2>
+      </div>
+      <div class="profile-grid">
+        <div class="profile-card">
+          <div class="profile-card__icon">🎂</div>
+          <span class="profile-card__value" id="profile-age">21</span>
+          <span class="profile-card__label" data-i18n="ageLabel">Age (years)</span>
+          <span class="profile-card__sub" id="profile-birthday"></span>
+        </div>
+        <div class="profile-card">
+          <div class="profile-card__icon">📏</div>
+          <span class="profile-card__value">187</span>
+          <span class="profile-card__label" data-i18n="heightLabel">Height (cm)</span>
+          <span class="profile-card__sub">6'1.5"</span>
+        </div>
+        <div class="profile-card">
+          <div class="profile-card__icon">⚖️</div>
+          <span class="profile-card__value">81</span>
+          <span class="profile-card__label" data-i18n="weightLabel">Weight (kg)</span>
+          <span class="profile-card__sub">178.6 lbs</span>
+        </div>
+        <div class="profile-card">
+          <div class="profile-card__icon">📊</div>
+          <span class="profile-card__value">23.2</span>
+          <span class="profile-card__label" data-i18n="bmiLabel">BMI</span>
+          <span class="profile-card__sub profile-card__sub--good" data-i18n="bmiStatus">Healthy Range ✓</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PROGRAM TIMELINE ====== -->
+  <section id="timeline" class="section timeline-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag" data-i18n="timelineTag">PROGRESSION PATH</span>
+        <h2 class="section__title" data-i18n="timelineTitle">Program Timeline</h2>
+        <p class="section__desc" data-i18n="timelineDesc">Your training should evolve as you get stronger. Here's the roadmap.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline__line"></div>
+        <div class="timeline__item timeline__item--active">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__period">Month 0 – 6</span>
+            <h3 class="timeline__title" data-i18n="tl1Title">Beginner Program</h3>
+            <p class="timeline__text" data-i18n="tl1Text">PPL 5x/week · 3 sets · 12→10→8 reps · Focus on learning proper form, building mind-muscle connection, and establishing consistency. As a 21yo at 187cm/81kg, you're in an ideal position — natural testosterone is at peak levels. No training to failure yet. Transition when you can no longer add weight every week (typically 4-6 months).</p>
+            <span class="timeline__badge timeline__badge--current" data-i18n="tlYouAreHere">← YOU ARE HERE</span>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__period">Month 6 – 18</span>
+            <h3 class="timeline__title" data-i18n="tl2Title">Intermediate Program</h3>
+            <p class="timeline__text" data-i18n="tl2Text">PPL 6x/week · 4 sets on compounds · Periodized rep ranges (5-5-8-8) · Deadlift added · Training to failure on last sets · Weekly progressive overload. Move here when linear session-to-session progression stalls.</p>
+            <a href="advanced.html" class="timeline__link" data-i18n="tlViewAdvanced">View Advanced Program →</a>
+          </div>
+        </div>
+        <div class="timeline__item">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <span class="timeline__period">Month 18+</span>
+            <h3 class="timeline__title" data-i18n="tl3Title">Specialized Training</h3>
+            <p class="timeline__text" data-i18n="tl3Text">12-week block periodization · Strength phase (4wk) → Hypertrophy phase (6wk) → Deload (2wk) · Advanced techniques (drop sets, rest-pause, myo-reps) · Weak point specialization.</p>
+            <a href="specialized.html" class="timeline__link" data-i18n="tlViewSpec">View Specialized Program →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__text">Built as part of the <strong>Life System</strong> — a personal framework for discipline and growth.</p>
+        <div class="footer__links">
+          <a href="../" class="footer__link">← Life System Home</a>
+          <a href="advanced.html" class="footer__link">Advanced Program →</a>
+          <a href="https://musclewiki.com" target="_blank" rel="noopener" class="footer__link">MuscleWiki ↗</a>
+        </div>
+        <p class="footer__copy">Consistency beats perfection. Show up every day.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

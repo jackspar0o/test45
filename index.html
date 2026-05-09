@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life System — Personal Framework for Discipline</title>
+  <meta name="description" content="Track your progress across Gym, NoFap, Sleep — see where you rank among 8 billion people." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Gym/style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <header id="hero" class="hero hero--has-bg" style="background-image: url('hero.png')">
+    <div class="hero__bg-pattern"></div>
+    <nav class="hero__nav">
+      <a href="#" class="nav__brand"><span class="nav__icon"></span><span>LIFE SYSTEM</span></a>
+      <div class="nav__links">
+        <a href="ds.html" class="nav__link" style="color:var(--green-light)">Daily Schedule</a>
+        <a href="#pillars" class="nav__link">Good Habits</a>
+        <a href="#eliminate" class="nav__link">Eliminate</a>
+        <a href="#ranking" class="nav__link">Ranking</a>
+      </div>
+      <div class="nav__actions">
+        <button id="mobile-menu-btn" class="nav__mobile-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="hero__content hero__content--compact">
+      <!-- <div class="hero__badge">PERSONAL DISCIPLINE FRAMEWORK</div> -->
+      <h1 class="hero__title"><span class="hero__title-line">LIFE</span><span class="hero__title-line hero__title-line--accent">SYSTEM</span></h1>
+      <p class="hero__subtitle">Build discipline through good habits. Eliminate weakness. Track your rank among 8 billion.</p>
+      <div style="margin-top: 32px;">
+        <a href="ds.html" style="display:inline-block; padding:14px 32px; background:rgba(29,155,240,0.9); color:#fff; font-size:0.95rem; font-weight:600; text-decoration:none; border-radius:100px; border:1px solid #1d9bf0; transition:all 0.2s ease; box-shadow:0 8px 24px rgba(29,155,240,0.2);">View Daily Schedule </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3 PILLARS -->
+  <section id="pillars" class="section dash-pillars-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">THE 3 PILLARS</span>
+        <h2 class="section__title">Good Habits to Build</h2>
+        <p class="section__desc">These three disciplines compound. Together they transform your body, mind, and willpower.</p>
+      </div>
+      <div class="dash-pillars">
+        <a href="Gym/" class="dash-pillar dash-pillar--gym">
+          <div class="dash-pillar__icon">🏋️</div>
+          <h3 class="dash-pillar__title">Gym System</h3>
+          <p class="dash-pillar__desc">5-6x/week PPL training. Progressive overload. Build strength and muscle systematically.</p>
+          <span class="dash-pillar__link">View Program →</span>
+        </a>
+        <a href="NoFap/" class="dash-pillar dash-pillar--nofap">
+          <div class="dash-pillar__icon">🧠</div>
+          <h3 class="dash-pillar__title">NoFap</h3>
+          <p class="dash-pillar__desc">Reclaim your dopamine, energy, and time. Break the cycle. Build unshakeable self-discipline.</p>
+          <span class="dash-pillar__link">View Tracker →</span>
+        </a>
+        <a href="Sleep/" class="dash-pillar dash-pillar--sleep">
+          <div class="dash-pillar__icon">😴</div>
+          <h3 class="dash-pillar__title">Sleep System</h3>
+          <p class="dash-pillar__desc">9:30 PM → 6:30 AM. 9 hours. Fixed schedule. Research-backed sleep hygiene protocol.</p>
+          <span class="dash-pillar__link">View Protocol →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THINGS TO ELIMINATE -->
+  <section id="eliminate" class="section tips-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">ELIMINATE IMMEDIATELY</span>
+        <h2 class="section__title">8 Things Destroying You</h2>
+        <p class="section__desc">You can't build a strong life on a foundation of garbage. Cut these out.</p>
+      </div>
+      <div class="dash-elim-grid">
+        <div class="dash-elim" id="elim-pmo">
+          <div class="dash-elim__check" data-habit="pmo"></div>
+          <div class="dash-elim__content">
+            <h3>❌ PMO / Pornography</h3>
+            <p>Destroys dopamine sensitivity, motivation, and self-respect. 78% of men aged 13-65 consume it. Quitting puts you ahead of the majority.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-energy">
+          <div class="dash-elim__check" data-habit="energy"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Energy Drinks</h3>
+            <p>~9% of people consume energy drinks daily (NIH). Loaded with sugar, caffeine, and chemicals. They spike cortisol, crash your energy, and damage your heart over time.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-junk">
+          <div class="dash-elim__check" data-habit="junk"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Junk Food</h3>
+            <p>Ultra-processed food is linked to 30+ diseases (WHO). Increases obesity, depression, heart disease risk. Eat real food — meat, rice, vegetables, fruits.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-music">
+          <div class="dash-elim__check" data-habit="music"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Music (Excessive)</h3>
+            <p>90%+ of people listen to music daily (~20.7 hrs/week). It's constant dopamine stimulation. Replace it with silence, podcasts, or Quran to let your mind rest and reflect.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-scroll">
+          <div class="dash-elim__check" data-habit="scroll"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Mindless Scrolling</h3>
+            <p>Average person scrolls 2h 23min/day on social media. That's 36 days/year wasted. Uninstall TikTok, Instagram, and Twitter. Use your phone as a tool, not a toy.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-late">
+          <div class="dash-elim__check" data-habit="late"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Staying Up Late</h3>
+            <p>Only 15% of adults get recommended sleep 5+ nights/week. Night owls have 10% higher mortality risk (NIH). Your bed time is 9:30 PM. Non-negotiable.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-complain">
+          <div class="dash-elim__check" data-habit="complain"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Complaining & Negativity</h3>
+            <p>Chronic stress and sustained elevated cortisol are associated with reduced hippocampal volume, impairing memory consolidation and emotional regulation. (McEwen, Annual Review of Neuroscience, 1999 — Rockefeller University). Negativity rewires your brain. Stop talking about problems — start solving them.</p>
+          </div>
+        </div>
+        <div class="dash-elim" id="elim-lazy">
+          <div class="dash-elim__check" data-habit="lazy"></div>
+          <div class="dash-elim__content">
+            <h3>❌ Laziness & Procrastination</h3>
+            <p>Research estimates ~20% of adults are chronic procrastinators (Pychyl & Flett, 2012). Every hour you waste is gone forever. Use the 2-minute rule: if it takes less than 2 min, do it now.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL RANKING -->
+  <section id="ranking" class="section dash-ranking-section">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__tag">OUT OF 8 BILLION</span>
+        <h2 class="section__title">Your Global Ranking</h2>
+        <p class="section__desc">Click each habit you actively practice to see where you rank among 8 billion humans. All data is research-based.</p>
+      </div>
+      <div class="dash-rank-grid">
+        <!-- Each rank card is a toggle -->
+        <div class="dash-rank-card" id="rank-gym" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">🏋️ Train 5x/Week</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 5%</span>
+            <span class="dash-rank__people">~400 million people</span>
+            <span class="dash-rank__source">Source: WHO 2024 Physical Activity Report — Only ~31% meet basic activity guidelines; training 5x/week puts you in the top 5%</span>
+          </div>
+        </div>
+        <div class="dash-rank-card" id="rank-nofap" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">🧠 NoFap (No PMO)</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 30–35%</span>
+            <span class="dash-rank__people">~2.4–2.8 billion adults</span>
+            <span class="dash-rank__source">Source: Institute for Family Studies / IFPI — ~69% of men report watching pornography; abstaining entirely is roughly top 30–35% among adult males</span>
+          </div>
+        </div>
+        <div class="dash-rank-card" id="rank-sleep" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">😴 Quality Sleep (7–9hrs Consistent)</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 30%</span>
+            <span class="dash-rank__people">~2.4 billion people</span>
+            <span class="dash-rank__source">Source: Global Sleep Study / CDC — Only ~65–70% of adults achieve the recommended 7–9 hour range consistently</span>
+          </div>
+        </div>
+        <div class="dash-rank-card" id="rank-nodrinks" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">🚫 No Energy Drinks</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 91%</span>
+            <span class="dash-rank__people">~7.3 billion people</span>
+            <span class="dash-rank__source">Source: NIH Meta-analysis — ~8.82% consume energy drinks daily</span>
+          </div>
+        </div>
+        <div class="dash-rank-card" id="rank-nojunk" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">🥗 Clean Eating (No Junk)</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 18%</span>
+            <span class="dash-rank__people">~1.44 billion people</span>
+            <span class="dash-rank__source">Source: WHO / Lancet — ~82% of global diet includes ultra-processed food regularly</span>
+          </div>
+        </div>
+        <div class="dash-rank-card" id="rank-noscroll" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">📵 Minimal Screen Time</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 5–8%</span>
+            <span class="dash-rank__people">~400–640 million people</span>
+            <span class="dash-rank__source">Source: DataReportal 2024 — Global average is 6h 54min/day; fewer than 8% consistently stay under 2 hours</span>
+          </div>
+        </div>
+        <div class="dash-rank-card" id="rank-nolate" data-active="false">
+          <div class="dash-rank__toggle">
+            <div class="dash-rank__checkbox"></div>
+            <span class="dash-rank__name">⏰ Early Sleep Schedule</span>
+          </div>
+          <div class="dash-rank__data">
+            <span class="dash-rank__percent">Top 5–8%</span>
+            <span class="dash-rank__people">~400–640 million people</span>
+            <span class="dash-rank__source">Source: Oxford Academic / Withings Sleep Study (73M nights) — Mean global bedtime is 11:30 PM; sleeping before 10 PM consistently is under 8% of adults</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMBINED SCORE -->
+      <div class="dash-combined">
+        <div class="dash-combined__header">
+          <span class="section__tag">YOUR COMBINED RANKING</span>
+          <div class="dash-combined__score">
+            <span class="dash-combined__percent" id="combined-percent">0%</span>
+            <span class="dash-combined__label">Active Habits</span>
+          </div>
+        </div>
+        <div class="dash-combined__result" id="combined-result">
+          <p class="dash-combined__text">Click the habits you practice above to calculate your global ranking.</p>
+        </div>
+        <div class="dash-combined__bar-wrap">
+          <div class="dash-combined__bar" id="combined-bar"></div>
+        </div>
+        <div class="dash-combined__labels">
+          <span>Bottom</span>
+          <span>Average</span>
+          <span>Top 1%</span>
+        </div>
+        <p class="dash-combined__disclaimer">Rankings are estimates based on global health research data. Individual habits are correlated and adjusted accordingly for statistical accuracy.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><div class="footer__content">
+      <p class="footer__text"><strong>Life System</strong> — A personal framework for discipline and growth.</p>
+      <div class="footer__links">
+        <a href="ds.html" class="footer__link">Daily Schedule</a>
+        <a href="Gym/" class="footer__link">Gym System</a>
+        <a href="NoFap/" class="footer__link">NoFap</a>
+        <a href="Sleep/" class="footer__link">Sleep System</a>
+      </div>
+      <p class="footer__copy">Your only competition is who you were yesterday.</p>
+    </div></div>
+  </footer>
+  <script src="dashboard.js"></script>
+</body>
+</html>

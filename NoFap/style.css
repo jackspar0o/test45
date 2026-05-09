@@ -1,0 +1,223 @@
+/* ---- NoFap Counter Styles ---- */
+.nf-counter-section { background: var(--bg-dark); border-top: 1px solid var(--border); }
+
+.nf-counter {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nf-counter__ring {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 40px;
+}
+
+.nf-ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.nf-ring-bg {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 6;
+}
+
+.nf-ring-progress {
+  fill: none;
+  stroke: var(--green-mid);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 565.48;
+  stroke-dashoffset: 565.48;
+  transition: stroke-dashoffset 1.5s ease;
+  filter: drop-shadow(0 0 8px rgba(29, 155, 240, 0.4));
+}
+
+.nf-counter__inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nf-counter__days {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--green-light);
+  line-height: 1;
+}
+
+.nf-counter__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.nf-counter__info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.nf-info-row {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.nf-info-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.nf-info-value {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.nf-info-value--accent { color: var(--green-light); }
+
+.nf-actions { display: flex; gap: 12px; justify-content: center; margin-bottom: 64px; }
+
+.nf-btn {
+  padding: 12px 32px;
+  border-radius: 100px;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--border);
+}
+
+.nf-btn--start {
+  background: var(--green-mid);
+  color: var(--bg-darkest);
+  border-color: var(--green-mid);
+}
+
+.nf-btn--start:hover { background: var(--green-light); }
+
+.nf-btn--reset {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.nf-btn--reset:hover { border-color: #e96060; color: #e96060; }
+
+/* Milestones */
+.nf-milestones { max-width: 700px; margin: 0 auto; }
+.nf-milestones__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nf-milestones__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.nf-mile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  opacity: 0.4;
+  transition: var(--transition);
+}
+
+.nf-mile--reached {
+  opacity: 1;
+  border-color: var(--green-mid);
+  background: rgba(29, 155, 240, 0.08);
+}
+
+.nf-mile__days {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--green-light);
+}
+
+.nf-mile__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.nf-mile__desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Science cards */
+.nf-science-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.nf-science-card {
+  padding: 24px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.nf-science-card:hover { border-color: var(--green-deep); transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.nf-science-card__week {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--green-mid);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.nf-science-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.nf-science-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .nf-milestones__grid { grid-template-columns: repeat(2, 1fr); }
+  .nf-science-grid { grid-template-columns: 1fr 1fr; }
+  .nf-counter__days { font-size: 3rem; }
+}
+
+@media (max-width: 480px) {
+  .nf-milestones__grid, .nf-science-grid { grid-template-columns: 1fr; }
+  .nf-counter__info { grid-template-columns: 1fr; }
+}
